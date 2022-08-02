@@ -22,6 +22,7 @@
     {% endblock %}
 
     {% block corejs %}
+    <script src="https://kit.fontawesome.com/efa575d299.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
     {% endblock %}
 
@@ -32,7 +33,66 @@
   </head>
 
   <body>
-    <header class="container-fluid fixed-top"></header>
+    <!-- Main Header -->
+    <header class="container-fluid fixed-top mb-5">
+        <div class="row">
+
+            <!-- Home Button/Logo -->
+            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
+                <a href="{% url 'home' %}" class="nav-link main-logo-link">
+                    <h2 class="logo-font my-0"><strong>Friendly Fitness</strong></h2>
+                </a>
+            </div>
+            <!-- End Home Button -->
+
+            <!-- Site Navigation -->
+            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+                <ul class="list-inline list-unstyled text-center text-lg-right my-0">
+                    
+                    <!-- Display Criteria for whether a User Is Authenticated -->
+                    <li class="list-inline-item">
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              My Account
+                            </button>
+                            <ul class="dropdown-menu">
+                                {% if request.user.is_authenticated %}
+                                    {% if request.user.is_superuser %}    
+                                        <li><a class="dropdown-item" href="#">Product Management</a></li>
+                                    {% endif %}
+                                        <li><a class="dropdown-item" href="#">My Profile </a></li>
+                                        <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a></li>
+                                    {% else %}
+                                        <li><a class="dropdown-item" href="{% url 'account_login' %}">Login</a></li>
+                                        <li><a class="dropdown-item" href="{% url 'account_signup' %}">Sign Up</a></li>
+                                    {% endif %}
+                            </ul>
+                        </div>
+                    </li>
+                    <!-- End Account Button -->
+
+                    <!-- Display Shopping Icon and if Products in Cart, Display Total -->
+                    <li class="list-inline-item">
+                        <a class="{% if grand_total %}text-decoration-underline font-weight-bold{% else %}text-decoration-line-through{% endif %} nav-link" href="">
+                            <div class="text-center">
+                                <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+                                <p class="my-0">
+                                    {% if grand_total %}
+                                        ${{ grand_total|floatformat:2 }}
+                                    {% else %}
+                                        $0.00
+                                    {% endif %}
+                                </p>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- End Shopping Icon -->
+
+                </ul>
+            </div>
+            <!-- End of Site Navigation-->
+        </div>
+    </header>
 
     {% if messages %}
     <div class="message-container"></div>
