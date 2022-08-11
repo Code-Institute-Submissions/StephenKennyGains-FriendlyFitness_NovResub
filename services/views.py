@@ -1,12 +1,12 @@
 from django.shortcuts import render
-from .models import Services
+from .models import Service
 
 # Create your views here.
 
 def all_services(request):
     """ All Services View """
 
-    services = Services.objects.all()
+    services = Service.objects.all()
 
     context = {
         'services': services,
