@@ -10,6 +10,11 @@
     width: 1.5rem;
 }
 
+.update-link,
+.remove-item {
+    cursor: pointer;
+}
+
 /* --------- Media Queries --------- */
 
 /* Large */

@@ -1,8 +1,11 @@
+""" Services Models """
 from django.db import models
 
 # Create your models here.
 
+
 class Category(models.Model):
+    """ Category Model """
     name = models.CharField(max_length=254)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
 
@@ -10,9 +13,12 @@ class Category(models.Model):
         return self.name
 
     def get_friendly_name(self):
+        """ To return Friendly Name """
         return self.friendly_name
 
+
 class Service(models.Model):
+    """ Service Model """
     category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
     name = models.CharField(max_length=254)
     description = models.TextField()

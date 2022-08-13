@@ -12,88 +12,141 @@
 {% endblock %}
 
 {% block content %}
-<div class="container mb-2">
-    <div class="row">
-        <div class="col mt-5">
-            <hr>
-            <h2 class="logo-font mb-4">Shopping Cart</h2>
-            <hr>
-        </div>
-    </div>
-
+<!-- White background overlay div to hide the homepage background image -->
+<div class="overlay"></div>
+<div class="container bag-content mb-2 content">
+    <!-- Page heading -->
     <div class="row">
         <div class="col">
-
-            {% if cart_items %}
-            <!---------- Table Headers for Shopping Cart  ---------->
-            <div class="table-responsive rounded">
-                <table class="table table-sm table-borderless">
-                    <thead class="text-black">
-                        <tr>
-                            <th scope="col" class="my-2">Service</th>
-                            <th scope="col" class="my-2"></th>
-                            <th scope="col" class="my-2">Price</th>
-                            <th scope="col" class="my-2">Qty</th>
-                            <th scope="col" class="my-2">Subtotal</th>
-                        </tr>
-                    </thead>
-
-                    {% for item in cart_items %}
-                    <!---------- Return to Services  and Checkout Option ---------->
-                                <tr>
-                                    <td class="p-3 w-25">
-                                        <img class="img-fluid rounded" src="{{ item.service.image.url }}">
-                                    </td>
-                                    <td class="py-3">
-                                        <p class="my-0">{{ item.service.name }}</p>
-                                    </td>
-                                    <td class="py-3 mx-auto">
-                                        <p class="my-0">${{ item.service.price }}</p>
-                                    </td>
-                                    <td class="py-3 mx-auto">
-                                        <p class="my-0">{{ item.quantity }}</p>
-                                    </td>
-                                    <td class="py-3 mx-auto">
-                                        <p class="my-0">${{ item.service.price }}</p>
-                                    </td>
-                                </tr>
-                            {% endfor %}
-
-                            <!---------- Total calculating Total + Delivery = Grand Total  ---------->
-                            <tr>
-                                <td class="">
-                                    <h6><strong>Total: ${{ total|floatformat:2 }}</strong></h6>
-                                    <h6>Delivery: ${{ delivery|floatformat:2 }}</h6>
-                                    <h4 class="mt-4"><strong>Grand Total: ${{ grand_total|floatformat:2 }}</strong></h4>
-                                </td>
-                            </tr>
-
-                            <!---------- Return to Services  and Checkout Option ---------->
-                            <tr>
-                                <td colspan="5" class="">
-                                    <a href="{% url 'services' %}" class="btn btn-outline-black rounded-0 btn-lg">
-                                        <span class="text-uppercase">Continue Shopping</span>
-                                    </a>
-                                    <a href="" class="btn rounded-0 btn-lg">
-                                        <span class="text-uppercase">Secure Checkout</span>
-                                        <span class="icon">
-                                            <i class="fas fa-lock"></i>
-                                        </span>
-                                    </a>
-                                </td>
-                            </tr>
-                            <!---------- END OF- Return to Services  and Checkout Option ---------->
-
-                        </table>
-                    </div>
-
-            {% else %}
-                <p class="lead mb-5">Your Cart is empty.</p>
-                <a href="{% url 'services' %}" class="btn btn-outline-black rounded-0 btn-lg">
-                    <span class="text-uppercase">Continue Shopping</span>
-                </a>
-            {% endif %}
-            
+            <h2 class="text-center bag-title"><strong>Shopping Bag</strong></h2>
+            <hr class="w-50 mb-1">
         </div>
     </div>
+    {% if cart_items %}
+    <div class="row">
+        {% for item in cart_items %}
+        <div class="col-md-3 mt-4">
+            <!-- Product Image -->
+            {% if item.service.image %}
+            <img class="img-fluid rounded bag-img" src="{{ item.service.image.url }}">
+            {% else %}
+            <img class="img-fluid rounded bag-img" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.service.name }}">
+            {% endif %}
+        </div>
+        <div class="col-md-4 mt-4">
+            <!-- Product Name & SKU -->
+            <p class="my-0"><strong>{{ item.service.name }}</strong></p>
+            <!-- Product Price -->
+            <p class="my-0">Price: £{{ item.service.price }}</p>
+            <!-- Total price of item by quantity -->
+            <p class="my-0">Total: {{ item.service.price }}</p>
+
+        </div>
+        <div class="col-md-5 mt-4">
+            <form method="POST" action="{% url 'adjust_cart' item.item_id %}" class="form update-form">
+                <!-- Bag Item Quantity -->
+                {% csrf_token %}
+                <div class="form-group">
+                    <p>Qty:</p>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <!-- Decrement Quantity -->
+                            <button class="decrement-qty btn btn-sm rounded-0" data-item_id="{{ item.item_id }}"
+                                id="decrement-qty_{{ item.item_id }}">
+                                <span class="icon">
+                                    <i class="fas fa-minus fa-sm"></i>
+                                </span>
+                            </button>
+                        </div>
+                        <!-- Manual Input Quantity -->
+                        <input class="form-control form-control-sm qty_input text-center" type="number" name="quantity"
+                            value="{{ item.quantity }}" min="1" max="99" data-item_id="{{ item.item_id }}"
+                            id="id_qty_{{ item.item_id }}">
+                        <div class="input-group-append">
+                            <!-- Increment Quantity -->
+                            <button class="increment-qty btn btn-sm rounded-0" data-item_id="{{ item.item_id }}"
+                                id="increment-qty_{{ item.item_id }}">
+                                <span class="icon">
+                                    <i class="fas fa-plus fa-sm"></i>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <!-- Update and Remove product buttons -->
+            <a class="update-link text-info bag-btn"><small>Update</small></a>
+            <a class="remove-item text-danger float-right bag-btn"
+                id="remove_{{ item.item_id }}"><small>Remove</small></a>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="row">
+        <div class="col-12 mt-4 text-right">
+            <!-- Bag Total, Delivery Price & Grand Total -->
+            <h6 class=""><strong>Total: £{{ total|floatformat:2 }}</strong></h6>
+            <h6 class="">Delivery: {{ delivery|floatformat:2 }}</h6>
+            <h4 class="mt-4 grand-total"><strong>Grand Total: {{ grand_total|floatformat:2 }}</strong></h4>
+        </div>
+    </div>
+    <div class="row mt-4 mb-4">
+        <div class="col-12 text-right">
+            <!--Return to Products Button -->
+            <a href="{% url 'services' %}" class="btn rounded-0 btn-lg bag-btn bag-back-btn">
+                <span class="icon text-uppercase">
+                    <i class="fas fa-chevron-left bag-btn-font"></i>
+                    Continue Shopping
+                </span>
+            </a>
+            <!-- Checkout Button -->
+            <a href="#" class="btn rounded-0 btn-lg bag-btn checkout">
+                <span class="text-uppercase bag-btn-font">Secure Checkout</span>
+                <span>
+                    <i class="fa-solid fa-unlock bag-btn-font"></i>
+                    <i class="fas fa-chevron-right bag-btn-font"></i>
+                </span>
+            </a>
+        </div>
+        {% else %}
+        <div class="col-12">
+            <!-- If not bag items notify user the bag is empty & link back to products page -->
+            <p class="lead mb-5">Your cart is empty.</p>
+            <a href="{% url 'services' %}" class="btn rounded-0 btn-lg shop-btn logo">
+                <span>
+                    <i class="fas fa-chevron-left"></i>
+                </span>
+                Continue Shopping
+            </a>
+        </div>
+    {% endif %}
+    </div>
+ </div>
+
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+{% include 'services/includes/quantity_input_script.html' %}
+<script type="text/javascript">
+    // Update quantity on click
+    $('.update-link').click(function (e) {
+        var form = $(this).prev('.update-form');
+        form.submit();
+    });
+
+    // Remove item and reload on click
+    $('.remove-item').click(function (e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var url = `/cart/remove/${itemId}/`;
+        var data = {
+            'csrfmiddlewaretoken': csrfToken
+        };
+
+        $.post(url, data)
+            .done(function () {
+                location.reload();
+            });
+    });
+</script>
 {% endblock %}
