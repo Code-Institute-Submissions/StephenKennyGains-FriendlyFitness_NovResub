@@ -23,17 +23,77 @@
 
     <div class="row">
         <div class="col">
+
             {% if cart_items %}
-                <div class="table-responsive rounded"></div>
+            <!---------- Table Headers for Shopping Cart  ---------->
+            <div class="table-responsive rounded">
+                <table class="table table-sm table-borderless">
+                    <thead class="text-black">
+                        <tr>
+                            <th scope="col" class="my-2">Service</th>
+                            <th scope="col" class="my-2"></th>
+                            <th scope="col" class="my-2">Price</th>
+                            <th scope="col" class="my-2">Qty</th>
+                            <th scope="col" class="my-2">Subtotal</th>
+                        </tr>
+                    </thead>
+
+                    {% for item in cart_items %}
+                    <!---------- Return to Services  and Checkout Option ---------->
+                                <tr>
+                                    <td class="p-3 w-25">
+                                        <img class="img-fluid rounded" src="{{ item.service.image.url }}">
+                                    </td>
+                                    <td class="py-3">
+                                        <p class="my-0">{{ item.service.name }}</p>
+                                    </td>
+                                    <td class="py-3 mx-auto">
+                                        <p class="my-0">${{ item.service.price }}</p>
+                                    </td>
+                                    <td class="py-3 mx-auto">
+                                        <p class="my-0">{{ item.quantity }}</p>
+                                    </td>
+                                    <td class="py-3 mx-auto">
+                                        <p class="my-0">${{ item.service.price }}</p>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+
+                            <!---------- Total calculating Total + Delivery = Grand Total  ---------->
+                            <tr>
+                                <td class="">
+                                    <h6><strong>Total: ${{ total|floatformat:2 }}</strong></h6>
+                                    <h6>Delivery: ${{ delivery|floatformat:2 }}</h6>
+                                    <h4 class="mt-4"><strong>Grand Total: ${{ grand_total|floatformat:2 }}</strong></h4>
+                                </td>
+                            </tr>
+
+                            <!---------- Return to Services  and Checkout Option ---------->
+                            <tr>
+                                <td colspan="5" class="">
+                                    <a href="{% url 'services' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                                        <span class="text-uppercase">Continue Shopping</span>
+                                    </a>
+                                    <a href="" class="btn rounded-0 btn-lg">
+                                        <span class="text-uppercase">Secure Checkout</span>
+                                        <span class="icon">
+                                            <i class="fas fa-lock"></i>
+                                        </span>
+                                    </a>
+                                </td>
+                            </tr>
+                            <!---------- END OF- Return to Services  and Checkout Option ---------->
+
+                        </table>
+                    </div>
+
             {% else %}
-                <p class="lead mb-5">Your bag is empty.</p>
+                <p class="lead mb-5">Your Cart is empty.</p>
                 <a href="{% url 'services' %}" class="btn btn-outline-black rounded-0 btn-lg">
-                    <span class="icon">
-                        <i class="fas fa-chevron-left"></i>
-                    </span>
-                    <span class="text-uppercase">Keep Shopping</span>
+                    <span class="text-uppercase">Continue Shopping</span>
                 </a>
             {% endif %}
+            
         </div>
     </div>
 {% endblock %}
