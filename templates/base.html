@@ -82,7 +82,7 @@
 
                     <!-- Display Shopping Icon and if Products in Cart, Display Total -->
                     <li class="list-inline-item">
-                        <a class="{% if grand_total %}text-decoration-underline font-weight-bold{% else %}text-decoration-line-through{% endif %} nav-link" href="">
+                        <a class="{% if grand_total %}text-decoration-underline font-weight-bold{% else %}text-decoration-line-through{% endif %} nav-link" href="{% url 'view_cart' %}">
                             <div class="text-center">
                                 <div><i class="fas fa-shopping-bag fa-lg"></i></div>
                                 <p class="my-0">
