@@ -30,6 +30,8 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <!-- Stripe -->
+    <script src="https://js.stripe.com/v3/"></script>
     {% endblock %}
 
     {% block extra_js %}
@@ -39,52 +41,37 @@
   </head>
 
   <body>
-    <!-- Main Header -->
-    <header class="container-fluid fixed-top mb-5">
-        <div class="row">
-
-            <!-- Home Button/Logo -->
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left page-title">
+    <header class="container-fluid fixed-top">
+        <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
+            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                 <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                    <h2 class="logo-font my-0"><strong>Friendly Fitness</strong></h2>
+                    <h2 class="logo-font text-black my-0">Friendly Fitness</h2>
                 </a>
             </div>
-            <!-- End Home Button -->
-
-            <!-- Site Navigation -->
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
-                    
-                    <!-- Display Criteria for whether a User Is Authenticated -->
-                    <li class="list-inline-item">
-                        <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              My Account
-                            </button>
-                            <ul class="dropdown-menu">
-                                {% if request.user.is_authenticated %}
-                                    {% if request.user.is_superuser %}    
-                                        <li><a class="dropdown-item" href="#">Product Management</a></li>
-                                    {% endif %}
-                                        <li><a class="dropdown-item" href="#">My Profile </a></li>
-                                        <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a></li>
-                                    {% else %}
-                                        <li><a class="dropdown-item" href="{% url 'account_login' %}">Login</a></li>
-                                        <li><a class="dropdown-item" href="{% url 'account_signup' %}">Sign Up</a></li>
-                                    {% endif %}
-                            </ul>
+                    <li class="list-inline-item dropdown">
+                        <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div class="text-center">
+                                <div><i class="fas fa-user fa-lg"></i></div>
+                                <p class="my-0">My Account</p>
+                            </div>
+                        </a>
+                        <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                            {% if request.user.is_authenticated %}
+                                {% if request.user.is_superuser %}
+                                    <a href="" class="dropdown-item">Product Management</a>
+                                {% endif %}
+                                <a href="" class="dropdown-item">My Profile</a>
+                                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                            {% else %}
+                                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                            {% endif %}
                         </div>
                     </li>
-
-                    <li class="button-lg">
-                        <a href="{% url 'services' %}"> Services </a>
-                    </li>
-                    
-                    <!-- End Account Button -->
-
-                    <!-- Display Shopping Icon and if Products in Cart, Display Total -->
                     <li class="list-inline-item">
-                        <a class="{% if grand_total %}text-decoration-underline font-weight-bold{% else %}text-decoration-line-through{% endif %} nav-link" href="{% url 'view_cart' %}">
+                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_cart' %}">
                             <div class="text-center">
                                 <div><i class="fas fa-shopping-bag fa-lg"></i></div>
                                 <p class="my-0">
@@ -97,11 +84,8 @@
                             </div>
                         </a>
                     </li>
-                    <!-- End Shopping Icon -->
-
                 </ul>
             </div>
-            <!-- End of Site Navigation-->
         </div>
     </header>
 
