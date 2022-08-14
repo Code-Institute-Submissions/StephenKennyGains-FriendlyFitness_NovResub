@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'services',
     'cart',
     'checkout',
+    'crispy_forms'
 ]
 
 MIDDLEWARE = [
@@ -60,6 +61,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'friendlyfitness.urls'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 TEMPLATES = [
     {
@@ -77,6 +80,10 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'cart.contexts.cart_contents',
             ],
+            'builtins':{
+                'crispy_forms.templatetage.crispy_forms_tags',
+                'crispy_forms.templatetage.crispy_forms_fields',
+            }
         },
     },
 ]
