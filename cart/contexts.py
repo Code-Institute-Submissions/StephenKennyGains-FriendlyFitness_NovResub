@@ -1,3 +1,4 @@
+"""Allows bag contents to be viewed from all pages across the site"""
 from decimal import Decimal
 from django.conf import settings
 from django.shortcuts import get_object_or_404
@@ -5,12 +6,12 @@ from services.models import Service
 
 
 def cart_contents(request):
-    """ Function for adding Total of items to shopping cart """
-
+    """View shopping bag contents, Code from CI Boutique Ado Project"""
     cart_items = []
     total = 0
     service_count = 0
     cart = request.session.get('cart', {})
+
 
     for item_id, quantity in cart.items():
         service = get_object_or_404(Service, pk=item_id)
@@ -23,6 +24,7 @@ def cart_contents(request):
         })
 
     if total < settings.FREE_DELIVERY_THRESHOLD:
+        delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
         free_delivery_delta = settings.FREE_DELIVERY_THRESHOLD - total
     else:
         delivery = 0

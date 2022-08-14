@@ -3,6 +3,7 @@ from .models import Service
 
 # Create your views here.
 
+
 def all_services(request):
     """ All Services View """
 
