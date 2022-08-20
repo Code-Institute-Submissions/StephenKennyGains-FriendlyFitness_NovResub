@@ -1,5 +1,5 @@
 body {
-    background-color: #5C5C5C;
+    background-color: #D3D3D3;
 }
 
 .home-page-image {
@@ -7,6 +7,11 @@ body {
     background-size: auto;
     height: calc(100vh - 164px);
     color: #555;
+}
+
+.btn-shop {
+    background-color: orange;
+    color: black;
 }
 
 /* --------- Header Nav ------------*/
@@ -17,6 +22,7 @@ body {
 
 .navbar-brand {
     font-family: 'Roboto';
+    font-size: 2rem;
     color: white;
 }
 
@@ -48,6 +54,20 @@ body {
 
 .site-font {
     font-family: 'Lato';
+}
+
+.price-icon {
+    font-size: 3rem;
+    color: #5C0F3E;
+}
+
+.site-titles {
+    font-size: 4rem;
+    color: #5C0F3E;
+}
+
+.text-sections {
+    font-size: 1.5rem;
 }
 
 /* -------- Bootstrap Toasts */
@@ -152,7 +172,7 @@ body {
 @media (min-width: 1200px) {
 
   }
-}
+
 
 /* ----------------- Allauth form formatting ----------------- */
 
