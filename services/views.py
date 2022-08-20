@@ -12,9 +12,29 @@ def all_services(request):
 
     services = Service.objects.all()
 
+    # service separated will go here
+    services_by_category = {}
+
+    # iterate over all services and seperate them
+    for service in list(services):
+
+        # get category name
+        category = service.category
+
+        # check if key exists
+        category_exists = services_by_category.get(category)
+
+        # if it doesnt exist, create the key and add to it
+        if not category_exists:
+            services_by_category[category] = []
+        
+        # add the service to it
+        services_by_category[category].append(service)
+
+    print(services_by_category)
     context = {
         'services': services,
-    }
+        }
 
     return render(request, 'services/services.html', context)
 

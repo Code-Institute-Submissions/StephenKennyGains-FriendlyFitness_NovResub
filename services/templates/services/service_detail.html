@@ -1,16 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col">
-
-            </div>
-        </div>
-    </div>
-{% endblock %}
-
 {% block content %}
 
     <div class="container-fluid mt-5">
@@ -30,7 +20,7 @@
             </div>
 
             <div class="col-12 col-md-6 col-lg-4 mt-5">
-                <div class="product-details-container mb-5">
+                <div class="product-details-container mb-5 site-font">
                     <p class="mt-5 mb-0">{{ service.name }}</p>
                     <p class="lead mb-0 text-left font-weight-bold">${{ service.price }}</p>
                     <p class="mt-3">{{ service.description }}</p>
@@ -54,13 +44,13 @@
                             </div>
 
                             <div class="col-12">
-                                <a href="{% url 'services' %}" class="btn rounded-0 mt-5">
+                                <a href="{% url 'services' %}" class="btn btn-other rounded-4 mt-5">
                                     <span class="icon">
                                         <i class="fas fa-chevron-left"></i>
                                     </span>
                                     <span class="text-uppercase">Continue Shopping</span>
                                 </a>
-                                <input type="submit" class="btn rounded-0 text-uppercase mt-5" value="Add to Cart">
+                                <input type="submit" class="btn btn-shop rounded-4 text-uppercase mt-5" value="Add to Cart">
                             </div>
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </div>

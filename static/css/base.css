@@ -9,11 +9,6 @@ body {
     color: #555;
 }
 
-.btn-shop {
-    background-color: orange;
-    color: black;
-}
-
 /* --------- Header Nav ------------*/
 
 .navbar {
@@ -54,6 +49,7 @@ body {
 
 .site-font {
     font-family: 'Lato';
+    color: #000;
 }
 
 .price-icon {
@@ -66,8 +62,25 @@ body {
     color: #5C0F3E;
 }
 
+.btn-shop {
+    background-color: orange;
+    color: black;
+}
+
+.btn-other {
+    background-color: #5C0F3E;
+    color: black;
+    color: white;
+}
+
 .text-sections {
     font-size: 1.5rem;
+}
+
+/*------------Service Pages -------------*/
+
+.card-design {
+    background-color: #D3D3D3;
 }
 
 /* -------- Bootstrap Toasts */
