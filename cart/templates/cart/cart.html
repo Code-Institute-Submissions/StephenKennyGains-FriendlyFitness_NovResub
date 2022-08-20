@@ -51,7 +51,7 @@
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <!-- Decrement Quantity -->
-                            <button class="decrement-qty btn btn-sm rounded-0" data-item_id="{{ item.item_id }}"
+                            <button class="decrement-qty btn btn-small btn-sm rounded-0" data-item_id="{{ item.item_id }}"
                                 id="decrement-qty_{{ item.item_id }}">
                                 <span class="icon">
                                     <i class="fas fa-minus fa-sm"></i>
@@ -60,11 +60,11 @@
                         </div>
                         <!-- Manual Input Quantity -->
                         <input class="form-control form-control-sm qty_input text-center" type="number" name="quantity"
-                            value="{{ item.quantity }}" min="1" max="99" data-item_id="{{ item.item_id }}"
+                            value="{{ item.quantity }}" min="1" max="3" data-item_id="{{ item.item_id }}"
                             id="id_qty_{{ item.item_id }}">
                         <div class="input-group-append">
                             <!-- Increment Quantity -->
-                            <button class="increment-qty btn btn-sm rounded-0" data-item_id="{{ item.item_id }}"
+                            <button class="increment-qty btn btn-small rounded-0" data-item_id="{{ item.item_id }}"
                                 id="increment-qty_{{ item.item_id }}">
                                 <span class="icon">
                                     <i class="fas fa-plus fa-sm"></i>
@@ -81,31 +81,47 @@
         </div>
         {% endfor %}
     </div>
-    <div class="row">
-        <div class="col-12 mt-4 text-right">
-            <!-- Bag Total, Delivery Price & Grand Total -->
+
+    <!-- Bag Total, Delivery Price & Grand Total -->
+    <div class="row mt-5">
+        <div class="col-12 d-flex justify-content-end text-right">
             <h6 class=""><strong>Total: £{{ total|floatformat:2 }}</strong></h6>
-            <h6 class="">Delivery: {{ delivery|floatformat:2 }}</h6>
-            <h4 class="mt-4 grand-total"><strong>Grand Total: {{ grand_total|floatformat:2 }}</strong></h4>
         </div>
     </div>
+    <div class="row">
+        <div class="col-12 d-flex justify-content-end text-right">
+            <h6 class="">Delivery: {{ delivery|floatformat:2 }}</h6>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 d-flex justify-content-end text-right">
+            <h4 class=""><strong>Grand Total: {{ grand_total|floatformat:2 }}</strong></h4>
+        </div>
+    </div>
+
     <div class="row mt-4 mb-4">
-        <div class="col-12 text-right">
+        <div class="col-12">
             <!--Return to Products Button -->
-            <a href="{% url 'services' %}" class="btn rounded-0 btn-lg bag-btn bag-back-btn">
-                <span class="icon text-uppercase">
-                    <i class="fas fa-chevron-left bag-btn-font"></i>
-                    Continue Shopping
-                </span>
-            </a>
-            <!-- Checkout Button -->
-            <a href="{% url 'checkout' %}" class="btn rounded-0 btn-lg bag-btn checkout">
-                <span class="text-uppercase bag-btn-font">Secure Checkout</span>
-                <span>
-                    <i class="fa-solid fa-unlock bag-btn-font"></i>
-                    <i class="fas fa-chevron-right bag-btn-font"></i>
-                </span>
-            </a>
+            <div class="row">
+                <div class="col-6 d-flex justify-content-start">
+                    <a href="{% url 'services' %}" class="btn rounded-4 btn-lg btn-other">
+                        <span class="text-uppercase">
+                            <i class="fas fa-chevron-left"></i>
+                            <span> Continue Shopping </span>
+                        </span>
+                    </a>
+                </div>
+                <!-- Checkout Button -->
+                <div class="col-6 d-flex justify-content-end">
+                    <a href="{% url 'checkout' %}" class="btn rounded-4 btn-lg btn-shop">
+                        <span>
+                            <i class="fa-solid fa-unlock bag-btn-font"></i>
+                            <span class="text-uppercase bag-btn-font">Secure Checkout</span>
+                            <i class="fas fa-chevron-right bag-btn-font"></i>
+                        </span>
+                    </a>
+                </div>
+            </div>
         </div>
         {% else %}
         <div class="col-12">

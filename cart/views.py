@@ -23,7 +23,7 @@ def add_to_cart(request, item_id):
 
     if item_id in list(cart.keys()):
         cart[item_id] += quantity
-        messages.success(request, f'Added {service.name} to your bag')
+        messages.success(request, f'Added {service.name} to your cart')
     else:
         cart[item_id] = quantity
         messages.success(request, f'Added {service.name} to your Cart')
@@ -52,7 +52,7 @@ def adjust_cart(request, item_id):
 
 
 def remove_from_cart(request, item_id):
-    """Remove the item from the shopping bag"""
+    """Remove the item from the shopping cart"""
 
     try:
         service = get_object_or_404(Service, pk=item_id)

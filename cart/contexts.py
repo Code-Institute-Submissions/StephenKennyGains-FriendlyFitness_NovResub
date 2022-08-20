@@ -1,4 +1,4 @@
-"""Allows bag contents to be viewed from all pages across the site"""
+"""Allows cart contents to be viewed from all pages across the site"""
 from decimal import Decimal
 from django.conf import settings
 from django.shortcuts import get_object_or_404
@@ -6,7 +6,7 @@ from services.models import Service
 
 
 def cart_contents(request):
-    """View shopping bag contents, Code from CI Boutique Ado Project"""
+    """View shopping cart contents, Code from CI Boutique Ado Project"""
     cart_items = []
     total = 0
     service_count = 0
