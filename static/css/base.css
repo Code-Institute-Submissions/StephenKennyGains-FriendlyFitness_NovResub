@@ -1,6 +1,31 @@
-.page-title {
-    font-family: 'Roboto';
+body {
+    background-color: #5C5C5C;
 }
+
+.home-page-image {
+    background: url('/media/woman_excercising_from_home.jpg') no-repeat center center fixed;
+    background-size: auto;
+    height: calc(100vh - 164px);
+    color: #555;
+}
+
+/* --------- Header Nav ------------*/
+
+.navbar {
+    background-color: #5C0F3E;
+}
+
+.navbar-brand {
+    font-family: 'Roboto';
+    color: white;
+}
+
+.nav-link,
+.nav-item {
+    font-family: 'Lato';
+    color: white;
+}
+
 
 .icon {
     align-items: center;
@@ -8,11 +33,21 @@
     justify-content: center;
     height: 1.5rem;
     width: 1.5rem;
+    color: white;
 }
 
+/* ---------------- Across Site Elements --------------- */
 .update-link,
 .remove-item {
     cursor: pointer;
+}
+
+.logo-font {
+    font-family: 'Roboto';
+}
+
+.site-font {
+    font-family: 'Lato';
 }
 
 /* -------- Bootstrap Toasts */
@@ -115,8 +150,7 @@
 
 /* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
-  .container {
-    max-width: 80%;
+
   }
 }
 
@@ -183,6 +217,13 @@
 }
 
 /* Medium */
-@media (min-width: 992px) {
-
+@media (max-width: 830px) {
+    .home-page-image {
+        background: url('/media/woman_excercising_from_home.jpg') no-repeat center center;
+        background-size: contain;
+        background-position: top;
+        position: relative;
+        height: 50vh;
+        color: #555;
+    }
 }
