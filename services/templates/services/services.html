@@ -22,7 +22,16 @@
                         {% if category.name == 'one_to_one' %}
                             <div class="row">
                                 <div class="col mt-3 text-center">
-                                    <h2 class="">One to One Personal Training</h2>
+                                    <h2 id="onetoone" class="">One to One Personal Training</h2>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6 mt-3 text-center">
+                                    <a href="#onlinecoaching">
+                                    <button class="btn btn-shop site-font text-sections rounded-4 mb-3">
+                                        Jump to Online Training
+                                    </button>
+                                    </a>
                                 </div>
                             </div>
                             {% for service in services %}
@@ -66,7 +75,7 @@
                         {% if category.name == 'online_training' %}
                             <div class="row">
                                 <div class="col mt-3 text-center">
-                                    <h2 class="">Online Coaching</h2>
+                                    <h2 id="onlinecoaching" class="">Online Coaching</h2>
                                 </div>
                             </div>
                             {% for service in services %}
