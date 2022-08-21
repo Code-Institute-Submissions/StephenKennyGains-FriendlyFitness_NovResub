@@ -3,51 +3,105 @@
 
 {% block content %}
 
-    <div class="container-fluid mt-5">
+    <div class="container mt-5">
         <div class="row">
             <div class="col mt-3 text-center">
                 <h2 class="">Services</h2>
-                <hr class="w-100 mb-1">
             </div>
         </div>
         <div class="row">
-            <div class="services-container col-10 offset-1">
-                <div class="row mt-1 mb-2"></div>
-                <div class="row">
-                    {% for service in services %}
-                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
-                            <div class="card border-0 mb-4">
-                                {% if service.image %}
-                                <a href="{% url 'service_detail' service.id %}">
-                                    <img class="card-img-top img-fluid" src="{{ service.image.url }}" alt="{{ service.name }}">
-                                </a>
-                                {% else %}
-                                <a href="{% url 'service_detail' service.id %}">
-                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ service.name }}">
-                                </a>
-                                {% endif %}
-                                <div class="card-body card-design site-font pb-0">
-                                    <p class="mb-0">{{ service.name }}</p>
-                                </div>
-                                <div class="card-footer card-design site-font pt-0 border-0 text-left">
-                                    <div class="row">
-                                        <div class="col">
-                                            <p class="lead mb-0 text-left font-weight-bold">€{{ service.price }}</p>
-                                        </div>
-                                    </div>
-                                    {% if request.user.is_superuser %}
-                                        <small class="ml-3">
-                                            <a href="{% url 'edit_service' service.id %}">Edit</a> | 
-                                            <a class="text-danger" href="{% url 'delete_service' service.id %}">Delete</a>
-                                        </small>
-                                    {% endif %}
-                                </div>
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>
+            <div class="col mt-3 text-center">
+                <p class="site-font text-sections">Choose from our options of One to One in person Personal Training, Online Coaching or Training Plans from the options below. <strong>Please note, One to One in person Personal Training is currently only available in Dublin, Ireland</strong></p>
             </div>
         </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="row mt-1 mb-2"></div>
+                <div class="row">
+                    {% for category, services in services_by_category.items %}
+                        {% if category.name == 'one_to_one' %}
+                            <div class="row">
+                                <div class="col mt-3 text-center">
+                                    <h2 class="">One to One Personal Training</h2>
+                                </div>
+                            </div>
+                            {% for service in services %}
+                                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                                    <div class="card border-0 mb-4">
+                                        {% if service.image %}
+                                        <a href="{% url 'service_detail' service.id %}">
+                                            <img class="card-img-top img-fluid" src="{{ service.image.url }}" alt="{{ service.name }}">
+                                        </a>
+                                        {% else %}
+                                        <a href="{% url 'service_detail' service.id %}">
+                                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ service.name }}">
+                                        </a>
+                                        {% endif %}
+                                        <div class="card-body card-design site-font pb-0">
+                                            <p class="mb-0">{{ service.name }}</p>
+                                        </div>
+                                        <div class="card-footer card-design site-font pt-0 border-0 text-left">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <p class="lead mb-0 text-left font-weight-bold">€{{ service.price }}</p>
+                                                </div>
+                                            </div>
+                                            {% if request.user.is_superuser %}
+                                                <small class="ml-3">
+                                                    <a href="{% url 'edit_service' service.id %}">Edit</a> | 
+                                                    <a class="text-danger" href="{% url 'delete_service' service.id %}">Delete</a>
+                                                </small>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endfor %}
+
+            <div class="col-12">
+                <div class="row mt-1 mb-2"></div>
+                <div class="row">
+                    {% for category, services in services_by_category.items %}
+                        {% if category.name == 'online_training' %}
+                            <div class="row">
+                                <div class="col mt-3 text-center">
+                                    <h2 class="">Online Coaching</h2>
+                                </div>
+                            </div>
+                            {% for service in services %}
+                                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                                    <div class="card border-0 mb-4">
+                                        {% if service.image %}
+                                        <a href="{% url 'service_detail' service.id %}">
+                                            <img class="card-img-top img-fluid" src="{{ service.image.url }}" alt="{{ service.name }}">
+                                        </a>
+                                        {% else %}
+                                        <a href="{% url 'service_detail' service.id %}">
+                                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ service.name }}">
+                                        </a>
+                                        {% endif %}
+                                        <div class="card-body card-design site-font pb-0">
+                                            <p class="mb-0">{{ service.name }}</p>
+                                        </div>
+                                        <div class="card-footer card-design site-font pt-0 border-0 text-left">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <p class="lead mb-0 text-left font-weight-bold">€{{ service.price }}</p>
+                                                </div>
+                                            </div>
+                                            {% if request.user.is_superuser %}
+                                                <small class="ml-3">
+                                                    <a href="{% url 'edit_service' service.id %}">Edit</a> | 
+                                                    <a class="text-danger" href="{% url 'delete_service' service.id %}">Delete</a>
+                                                </small>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endfor %}
     </div>
 
 {% endblock %}

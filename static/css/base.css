@@ -73,6 +73,19 @@ body {
     color: white;
 }
 
+.btn-training {
+    width: 80vw;
+    background-color: rgba(255, 166, 0, 0.442);
+    color: black;
+}
+
+.btn-training:hover,
+.btn-training:active {
+    width: 80vw;
+    background-color: #5C0F3E; 
+    color: white;
+}
+
 .btn-small {
     background-color: #5C0F3E;
     color: white;
@@ -162,7 +175,7 @@ body {
   }
 
 
-/* ----------------- Allauth form formatting ----------------- */
+/* Allauth form formatting */
 
 .allauth-form-inner-content p {
     margin-top: 1.5rem; /* mt-4 */
@@ -213,7 +226,14 @@ body {
 }
 
 .allauth-form-inner-content a {
-	color: #17a2b8; /* text-info */
+	color: #17a2b8;
+}
+
+.form-control
+{
+    color: #000;
+    border: 1px solid orange;
+    margin-bottom: 1rem;
 }
 
 
@@ -233,5 +253,25 @@ body {
         position: relative;
         height: 50vh;
         color: #555;
+    }
+
+    .text-sections {
+        font-size: 1.25rem;
+    }
+}
+
+/* Small */
+@media (max-width: 440px) {
+    .home-page-image {
+        background: url('/media/woman_excercising_from_home.jpg') no-repeat center center;
+        background-size: contain;
+        background-position: top;
+        position: relative;
+        height: 30vh;
+        color: #555;
+    }
+
+    .text-sections {
+        font-size: 1rem;
     }
 }

@@ -27,13 +27,13 @@ def all_services(request):
         # if it doesnt exist, create the key and add to it
         if not category_exists:
             services_by_category[category] = []
-        
+
         # add the service to it
         services_by_category[category].append(service)
 
-    print(services_by_category)
     context = {
         'services': services,
+        'services_by_category': services_by_category,
         }
 
     return render(request, 'services/services.html', context)
