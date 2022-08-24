@@ -12,7 +12,6 @@ def cart_contents(request):
     service_count = 0
     cart = request.session.get('cart', {})
 
-
     for item_id, quantity in cart.items():
         service = get_object_or_404(Service, pk=item_id)
         total += quantity * service.price

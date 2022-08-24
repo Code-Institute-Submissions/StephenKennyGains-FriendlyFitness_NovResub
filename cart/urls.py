@@ -1,3 +1,4 @@
+""" Sets URLS to be brought from Cart App """
 from django.urls import path
 from . import views
 

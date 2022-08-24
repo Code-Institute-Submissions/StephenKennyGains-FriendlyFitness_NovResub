@@ -362,73 +362,43 @@ The following features may prove useful to the site with a larger audience and f
 - Google Fonts
 
 # Testing
-## **Manual Testing by User Story**
-### **Superuser / Admin**
-### 1. As a Site Owner, I want to be able to add a product so that I can add more items to my store.
-
-### 3.	As a Site Owner, I want to be able to delete a product so that I can remove items that are no longer available.
-
-### 4.	As a Site Owner, I want to be able to send emails to customers with a subscription, notifying customers of any deals, sale and new arrivals.
-
-### 5.	As a Site Owner, I want to be able to remove reviews from the site without deleting them so that they can still be available if required.
-
-### 6. As a Business Owner I want to Create discount codes for customers so that I can reward loyal customers.
+## **Manual Testing based on User Stories**
+### Admin
+As an admin I would like to be able to review recent purchases
+(Recent purchases send through to the admin panel as expected with necessary details)
+As an admin I would like to be able to add to the list of services available
+(Services can easily and successfully be added to the site throuh the Services Management page)
+As an admin I would like to be able to update and/or delete services as necessary
+(Services can easily and effectively be edited or deleted when viewing on the Services page)
+As an admin I would like to be able to see new users that have been created for the store
+(New users are successfully added to the database and can be viewed in the admin panel for review)
 
 
 ### **Shopper**
-### 1. As a Shopper, I want to be able to view a list of items so that I can add them to my basket.
-
-
-###	2. As a shopper, I want to be able to click into an item so that I can view a product description and add to the basket.
-
-
-### 3. As a shopper, I want to be able to add items to my basket so that I can keep track of what I am spending.
-
-
-### 4. As a shopper, I want to be able to be able to adjust the quantity of products in my basket so that I can make changes to my purchases before checkout.
-
-
-### 5. As a shopper, I want to be able to be able to enter payment information so that I can check out quickly and hassle free.
-
-
-### 6. As a shopper, I want to be able to be able to feel that my personal and payment details are safe and secure so that I can confidently carry out my purchase.
-
-
-### 7. As a shopper, I want to be able to be able to view an order confirmation so that I can verify my order is correct.
-
-
-### 8. As a shopper, I want to be able to receive an email confirmation of my order so that I have proof of my order for my records.
-
-
-### 9. As a shopper, I want to be able to be able to order without creating an account so that I can make one-off orders.
-
-
-### 10. As a shopper, I want to be able to be able to sort a specific category of a product so that I can find the best price quickly for the product I am looking for.
-
-### 12. As a shopper, I want to be able to be able to easily see what I’ve searched for and the number of results so that I can quickly see whether the product is available.
-
-### 13. As a shopper, I want to be able to be able to easily register for an account so that I can have a personal account and view my profile and purchase history.
-
-
-### 14. As a shopper, I want to be able to be able to recover my password so that I can recover my account access.
-
-
-### 15. As a shopper, I want to be able to be able to receive a registration confirmation email so that I can confirm registration.
-
-
-### 16. As a shopper, I want to be able to be able to sign up for emails so that I can be notified of new releases, deals, and upcoming sales.
-
-
-### 17. As a shopper, I want to be able to be able to contact the site owner so that I can ask about my order or for further information not contained within the Footer Pages.
-
-
-### 18. As a shopper, I want to be able to be able to review products purchased on the site so I can share my thoughts with other shoppers and the business.
-
-
-### 19. As a shopper, I want to be able to be able to edit and remove my reviews of products purchased so I can share or remove my reviews if my opinions change.
-
-
-### 20. As a Shopper I want to save Items to my favourites so that I can purchase them later without having to search for them.
+As a User I would like to be able to find services on the page easily and quickly
+(Tested and worked as designed and felt the process simple and easy and no errors on multiple test)
+As a User I would like to be able to find services on the page easily and quickly
+(Navigation bar worked as Designed and was easily accessbible on various devices. No failed attempts)
+As a User I would like to be able to add services to my cart for review before purchasing
+(Cart was successfully updated with products and view was rendering as easily readabale and understandable)
+As a User I would like to be able to clearly be able to see the services I am purchasing and price
+(List of services displayed as expected both in the cart and checkout pages of the app and were easily recognised)
+As a User I would like to be able to browse the site easily with no unnecessary clutter
+(Site was kepy minimal and from additional user testing, were able to navigate through the serives easily and understand site objective)
+As a User I would like to be able to I would like to be able to store my information for the future
+(Information saved to user profiles when saving through the checkout page and by adding through the profile section)
+As a User I would like to be able to review my details and payment before completing my purchase
+(Checkout page is easily read through form fields to be able to understand and read the details provided along with validating checks)
+As a User I would like to be able to receive confirmation of my purchase
+(Confirmation email and receipts successfully sent with correct details after completing payment)
+As a User I would like to be able to Opt in for further information from the business
+(Mail chimp form is successfully adding users to the Mailchimp contacts for further updates)
+As a User I would like to be able to review my previous purchases from the Store
+(Previous purchases are displaying in the profile section for the user and displaying correct values)
+As a User I would like to be able to understand the services I am purchasing and their pricing
+(Pricing page and descriptions of services allow users information on the services they are purchasing and the reasons behind it)
+As a User I would like to be able to checkout securely and safely
+(Stripe payment is successfully validating cards and asking for verification when required)
 
 
 # Validator Testing
@@ -441,7 +411,7 @@ The following features may prove useful to the site with a larger audience and f
 
 # Responsive Testing
 
-I also tested this project's responsiveness across multiple devices including:
+Responsive Testing dont mainly through Developer Tools for the following-
 
 - iPhone X
 - iPhone 8
@@ -451,71 +421,17 @@ I also tested this project's responsiveness across multiple devices including:
 - iPad Pro 9.7"
 - MacBook Pro 13"
 
-I also used Google developer tools to check responsiveness across multiple other devices and screen sizes. 
 
 # Bugs Found 
 
-I encountered the following issues whilst building this project:
-- The Footer wasn't sticking to the bottom on some of the pages. To fix this I added an 'h-100' Bootstrap class to the container divs or set the minimum height within media queries. 
-
-- The Success Message wasn't working when removing items from the cart. To fix this I needed to get the product ID to identify which Item was being deleted in the message
-
-- The Shopping bag was repeating the 'Continue Shopping' and 'Add to Bag' buttons after every item in the bag. To fix this I moved the {% endfor %} for the {% if bag_items %} to be before the buttons.
-
-- Incorrect Stripe public key in checkout view. I accidentally wrote the public key in the context in capitals. 
-
-- I was able to add products to categories that were not on the dropdown list. To fix this I had to remove the non-existing categories in the admin panel and remove/change to category of the products added to these categories.
-
-- Deploy not completing - message received: ERROR: Could not find a version that satisfies the requirement python-apt==2.0.0+ubuntu0.20.4.7 (from versions: 0.0.0, 0.7.8). To fix this I removed the un-required installs from requirements.txt file.
-
-- The Webhook for the live site was generating a 301 error. To fix this I had to add a / at the end of the URL that the webhook was set up to.
-
-- The delivery confirmation page image wasn't Loading on the deployed site. To fix this I changed the image source to the images [AWS](https://aws.amazon.com/?nc2=h_lg) URL to display the image.
-
-- Stripe was sending a Server 500 error in the Webhooks, this was an error on Stripes part which I could not control. I believe this is fixed now. All Webhooks are currently sending as expected. 
 
 # User Feedback 
 
-- Make the price on the Product Card bolder.
-- Change 'Quantity' to 'Qty' on the Product Details page and Shopping Bag page.
-- Add a slight margin to the bottom of the Product Cards.
-- Center the Product Cards on the Products page.
-- Change the button styling so that the call to action is toward purchasing items.
-
-**Peer Code Review Feedback**
-
-My project was shared on Slack with other Code Institute students. The feedback received was: 
-
-- Add some weight to the font or make it larger as it is difficult to read on some of the pages, particularly the FAQs and About Us pages.
-
-All feedback received was implemented throughout the project.
  
 # Search Engine Optimisation (SEO)
 To find the relevant keywords for my project I made the following searches on [Google](www.google.co.uk) and [Word Tracker](www.wordtracker.com)  along with a few combinations:
 
--	Clay Jewellery
--	Polymer Clay Jewellery
--	Baked Clay Jewellery
--	Handmade jewellery
--	Handmade clay jewellery
--	Handmade gifts
--	Ladies handmade gifts
--	Gift ideas for woman
 
-Of the above, the top combination of searches  I found were:
-
--	Handmade Polymer Clay Jewellery
--	Handmade Jewellery Gifts 
--	Handmade Women’s Jewellery
--	Handmade Jewellery UK
--	Handmade Jewellery
-
-Of the above searches, Handmade Polymer Clay Jewellery best suited what my project is selling and had the highest search rate of all keywords attempted. With that in mind, I have selected the following to be included in my projects metadata:
-
--	Handmade Jewellery Gifts
--	Handmade Polymer Clay Jewellery
--	Handmade Jewellery
--	Polymer Clay Jewellery
 
 Also, I included ‘Handmade Jewellery’ within the homepage message’ along with a subheading of ‘Find the perfect gift today!’ 
 
@@ -684,42 +600,6 @@ I used the Code Institutes Boutique Ado Follow Along project to help with buildi
 
 - [Mini Web Tool](https://miniwebtool.com/django-secret-key-generator/) to generate a new Django Secret Key.
 
-- [Sculpey Blog Post](https://www.sculpey.com/create/blog/10-surprising-facts-about-polymer-clay#:~:text=Polymer%20clay%20is%20non%2Dtoxic,use%20around%20children%20and%20pets.) was used to gather information about polymer clay for the FAQs page.
-
-- I used [H&M](https://hmgroup.com/about-us/our-values/), [Oysho](https://www.oysho.com/gb/company.html), and [Accessorize](https://www.accessorize.com/uk/our-brand.html) to see how they shared their Policies and Frequently Asked Questions with their customers for content ideas.
-
-- [GDPR Privacy Policy Generator](https://www.privacypolicygenerator.info/) was used to generate the Privacy Policy that was added to the footer.
-
-- [Scottish Coder YouTube Tutorial](https://www.youtube.com/watch?v=1DcySa35fXw) was used to help with creating a working contact form view.
-
-- I used the following YouTube Tutorials to help with creating the Error404 page:
-
-    - [Custom 404 Error Page. Python Django Web Framework Course. #16](https://www.youtube.com/watch?v=3SKjPppM_DU)
-    - [Python Django 3 0 7 Create Show Custom 404 Error Page](https://www.youtube.com/watch?v=ZhwkddfqUTY)
-
-<br>
-
-- [XML Sitemap Generator](https://www.xml-sitemaps.com/) was used this to generate the sitemap for my project.
-
-- The following videos were used to help create the review functionality:
-    - [Rathan Kumar - Review and Rating System in Django Python Part 1](https://www.youtube.com/watch?v=3KCBN7WJXMY)
-    - [Rathan Kumar - Review and Rating System in Django Python Part 2](https://www.youtube.com/watch?v=Zkmu93lMLPs)
-    - [Rathan Kumar - Review and Rating System in Django Python Part 3](https://www.youtube.com/watch?v=gDtsAWMA3Jo)
-    - [Rathan Kumar - Review and Rating System in Django Python Part 4](https://www.youtube.com/watch?v=eIN1nZCt7Ww)
-
-- [Stack Overflow](https://stackoverflow.com/questions/16244821/how-to-stop-sticky-footer-from-covering-content) was used to fix the footer covering the review form.
-
-- [Stack Overflow](https://stackoverflow.com/a/666407) was used to help with the cancel button for the confirm delete review template.
-
-- [GitHub Django Allauth Issues](https://github.com/pennersr/django-allauth/issues/3037) was used to help fix email subject by adding ACCOUNT_EMAIL_SUBJECT_PREFIX to my settings.
-
-- The following video was used to help create the coupon functionality:
-    - [freeCodeCamp.org - How to Build an E-commerce Website with Django and Python](https://www.youtube.com/watch?v=YZvRrldjf1Y&t=10194s)
-
-- The following helped with putting together the favourites functionality:
-    - [Stackoverflow](https://stackoverflow.com/questions/64720982/modeling-favorites-in-django-from-two-different-models)
-    - [Very Academy Python Django Ecommerce Customer Wish List](https://github.com/veryacademy/django-ecommerce-project/blob/main/Part-07%20Wish%20List/account/views.py)
-    - [American Ale House](https://github.com/Steven-Dawson18/american-ale-house/tree/main/favourites)
 
 ### Styling
 - [Unsplash - Landing Image](https://unsplash.com/photos/uRuF9ABj0NY)
@@ -743,10 +623,4 @@ I used the Code Institutes Boutique Ado Follow Along project to help with buildi
 
 The images used in this project were also compressed using (OptimiZilla)[https://imagecompressor.com/].
 
-### Website Images
-- [Pexels - Delivery Image](https://www.pexels.com/photo/person-holding-green-and-white-floral-book-5486791/)
-
-- [Favicon Generator](https://favicon.io/favicon-converter/) used to generate a favicon image from a jpg image.
-
 # Acknowledgments
-Thank you to all who encouraged and supported me as I created my first full-stack E-Commerce website. Thank you to the Tutors at Code Institute for always helping to figure out issues I encountered that I was unable to solve myself. I'd especially like to thank my mentor at Code Institute, Antonio, for his guidance, patience, encouragement, and constant support.

@@ -1,13 +1,16 @@
+""" Admin settings for order Line Items """
 from django.contrib import admin
 from .models import Order, OrderLineItem
 
 
 class OrderLineItemAdminInline(admin.TabularInline):
+    """ Setting admin section for Line Items """
     model = OrderLineItem
     readonly_fields = ('lineitem_total',)
 
 
 class OrderAdmin(admin.ModelAdmin):
+    """ Setting the order details in line items """
     inlines = (OrderLineItemAdminInline,)
 
     readonly_fields = ('order_number', 'date',
