@@ -1,5 +1,5 @@
-from django.contrib import admin
-from django.urls import path, include
+""" Home Page URLS's """
+from django.urls import path
 from . import views
 
 urlpatterns = [

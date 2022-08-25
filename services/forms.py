@@ -1,11 +1,13 @@
+""" Services Forms section to add and update """
 from django import forms
 from .widgets import CustomClearableFileInput
 from .models import Service, Category
 
 
 class ServiceForm(forms.ModelForm):
-
+    """ Services Form Model """
     class Meta:
+        """ Services Form Meta Settings """
         model = Service
         fields = '__all__'
 

@@ -67,6 +67,11 @@ body {
     color: black;
 }
 
+.btn-shop-home {
+    background-color: orange;
+    color: black;
+}
+
 .btn-other {
     background-color: #5C0F3E;
     color: black;
@@ -95,10 +100,34 @@ body {
     font-size: 1.5rem;
 }
 
+.text-white {
+    color: white;
+}
+
+.fb-logo {
+    color: white;
+    font-size: 2rem;
+}
+
 /*------------Service Pages -------------*/
 
 .card-design {
     background-color: #D3D3D3;
+}
+
+/* ------------- Checkout Success Page ----------------  */
+
+.border-orange {
+    border: 2px solid orange;
+    box-shadow: 3px 6px 25px rgba(0, 0, 0, 0.384);
+}
+
+.recipt-font {
+    font-size: 1.25rem;
+}
+
+.text-purple {
+    color: #5C0F3E;
 }
 
 /* -------- Bootstrap Toasts */
@@ -182,11 +211,6 @@ footer {
 
 
 /* --------------- Media Queries --------------- */
-
-/* Slightly larger container on xl screens */
-@media (min-width: 1200px) {
-
-  }
 
 
 /* Allauth form formatting */
@@ -278,14 +302,33 @@ footer {
 @media (max-width: 440px) {
     .home-page-image {
         background: url('/media/woman_excercising_from_home.jpg') no-repeat center center;
-        background-size: contain;
+        background-size: cover;
         background-position: top;
         position: relative;
         height: 30vh;
         color: #555;
     }
 
+    .btn-shop-home {
+        background-color: orange;
+        color: black;
+        font-size: .75rem;
+    }
+
+    .site-titles {
+        font-size: 3rem;
+        color: #5C0F3E;
+    }
+
     .text-sections {
         font-size: 1rem;
+    }
+
+    .recipt-font {
+        font-size: 1rem;
+    }
+
+    .fb-section {
+        margin-top: 25px;
     }
 }

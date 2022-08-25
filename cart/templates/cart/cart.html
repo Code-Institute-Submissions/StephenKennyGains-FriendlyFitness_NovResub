@@ -37,7 +37,7 @@
             <!-- Product Name & SKU -->
             <p class="my-0"><strong>{{ item.service.name }}</strong></p>
             <!-- Product Price -->
-            <p class="my-0">Price: £{{ item.service.price }}</p>
+            <p class="my-0">Price: €{{ item.service.price }}</p>
             <!-- Total price of item by quantity -->
             <p class="my-0">Total: {{ item.service.price }}</p>
 
@@ -85,17 +85,17 @@
     <!-- Bag Total, Delivery Price & Grand Total -->
     <div class="row mt-5">
         <div class="col-12 d-flex justify-content-end text-right">
-            <h6 class=""><strong>Total: £{{ total|floatformat:2 }}</strong></h6>
+            <h6 class=""><strong>Total: €{{ total|floatformat:2 }}</strong></h6>
         </div>
     </div>
     <div class="row">
         <div class="col-12 d-flex justify-content-end text-right">
-            <h6 class="">Delivery: {{ delivery|floatformat:2 }}</h6>
+            <h6 class="text-decoration-line-through">Delivery: {{ delivery|floatformat:2 }}</h6>
         </div>
     </div>
     <div class="row">
         <div class="col-12 d-flex justify-content-end text-right">
-            <h4 class=""><strong>Grand Total: {{ grand_total|floatformat:2 }}</strong></h4>
+            <h4 class=""><strong>Grand Total: €{{ grand_total|floatformat:2 }}</strong></h4>
         </div>
     </div>
 
