@@ -118,23 +118,19 @@
     </header>
 
 
-    {% if messages %}
-    <div class="message-container">
-        {% for message in messages %}
-            {% with message.level as level %}
-                {% if level == 40 %}
-                    {% include 'includes/toasts/toast_error.html' %}
-                {% elif level == 30 %}
-                    {% include 'includes/toasts/toast_warning.html' %}
-                {% elif level == 25 %}
-                    {% include 'includes/toasts/toast_success.html' %}
-                {% else %}
-                    {% include 'includes/toasts/toast_info.html' %}
-                {% endif %}
-            {% endwith %}
-        {% endfor %}
-    </div>
-    {% endif %}
+    <div class="container">
+        <div class="row">
+          <div class="col-12 mx-auto text-center">
+            {% for message in messages %}
+              <div class="alert mt-2 {{ message.tags }} alert-dismissable fade show" id="message-alert" role="alert">
+                {{ message | safe }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+  
 
 
 
@@ -145,9 +141,16 @@
     {% endblock %}
 
     {% block postloadjs %}
-    <script type="text/javascript">
-        $('.toast').toast('show');
+    <!-- Mailchimp JS 
+    <script>
+        setTimeout(function () {
+            let messages = document.getElementById('message-alert');
+            let alert = new bootstrap.Alert(messages);
+            alert.close();
+        }, 2000);
     </script>
+    -->
+
     <!-- Mailchimp JS -->
     <script type='text/javascript'>
     (function($) {
