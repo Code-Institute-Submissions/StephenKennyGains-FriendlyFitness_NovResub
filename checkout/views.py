@@ -30,8 +30,8 @@ def cache_checkout_data(request):
         })
         return HttpResponse(status=200)
     except Exception as e:
-        messages.error(request, 'Sorry, your payment cannot be \
-            processed right now. Please try again later.')
+        messages.error(request, 'Sorry, your payment could not \
+            be processed. Please try again later.')
         return HttpResponse(content=e, status=400)
 
 
@@ -73,8 +73,8 @@ def checkout(request):
                         order_line_item.save()
                 except Service.DoesNotExist:
                     messages.error(request, (
-                        "One of the products in your bag wasn't found in our database. "
-                        "Please call us for assistance!")
+                        "One of the services you requested is not available. "
+                        "Please contact us for assistance.")
                     )
                     order.delete()
                     return redirect(reverse('view_cart'))
@@ -82,12 +82,12 @@ def checkout(request):
             request.session['save_info'] = 'save-info' in request.POST
             return redirect(reverse('checkout_success', args=[order.order_number]))
         else:
-            messages.error(request, 'There was an error with your form. \
-                Please double check your information.')
+            messages.error(request, 'There was an error with your request. \
+                Please confirm your information is correct.')
     else:
         cart = request.session.get('cart', {})
         if not cart:
-            messages.error(request, "There's nothing in your bag at the moment")
+            messages.error(request, "There's nothing in your cart right now.")
             return redirect(reverse('services'))
 
         current_cart = cart_contents(request)
@@ -99,7 +99,7 @@ def checkout(request):
             currency=settings.STRIPE_CURRENCY,
         )
 
-        # Attempt to prefill the form with any info the user maintains in their profile
+        # Attempt to prefill the form with any info the user has in their profile
         if request.user.is_authenticated:
             try:
                 profile = UserProfile.objects.get(user=request.user)
@@ -120,8 +120,8 @@ def checkout(request):
             order_form = OrderForm()
 
     if not stripe_public_key:
-        messages.warning(request, 'Stripe public key is missing. \
-            Did you forget to set it in your environment?')
+        messages.warning(request, 'Stripe could not process your request. \
+            Please contact us if you experience further issues.')
 
     template = 'checkout/checkout.html'
     context = {
@@ -161,7 +161,7 @@ def checkout_success(request, order_number):
             if user_profile_form.is_valid():
                 user_profile_form.save()
 
-    messages.success(request, f'Order successfully processed! \
+    messages.success(request, f'Whooray!! Order successfully processed! \
         Your order number is {order_number}. A confirmation \
         email will be sent to {order.email}.')
 

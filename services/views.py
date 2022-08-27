@@ -11,7 +11,7 @@ from .forms import ServiceForm
 def all_services(request):
     """ All Services View """
 
-    services = Service.objects.all()
+    services = Service.objects.all().order_by('id')
 
     # service separated will go here
     services_by_category = {}
@@ -56,17 +56,17 @@ def service_detail(request, service_id):
 def add_service(request):
     """ Add a product to the store """
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only store owners can do that.')
+        messages.error(request, 'Sorry, this is for store onwers only')
         return redirect(reverse('home'))
 
     if request.method == 'POST':
         form = ServiceForm(request.POST, request.FILES)
         if form.is_valid():
             service = form.save()
-            messages.success(request, 'Successfully added service!')
+            messages.success(request, 'Service Added Successfully')
             return redirect(reverse('service_detail', args=[service.id]))
         else:
-            messages.error(request, 'Failed to add Service. Please ensure the form is valid.')
+            messages.error(request, 'Failed to add service, please ensure all details are correct')
     else:
         form = ServiceForm()
 
@@ -82,7 +82,7 @@ def add_service(request):
 def edit_service(request, service_id):
     """ Edit a product in the store """
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only store owners can do that.')
+        messages.error(request, 'Sorry, this is for store owners only')
         return redirect(reverse('home'))
 
     service = get_object_or_404(Service, pk=service_id)
@@ -90,10 +90,10 @@ def edit_service(request, service_id):
         form = ServiceForm(request.POST, request.FILES, instance=service)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Successfully updated service!')
+            messages.success(request, 'Service Updated successfully')
             return redirect(reverse('service_detail', args=[service.id]))
         else:
-            messages.error(request, 'Failed to update service. Please ensure the form is valid.')
+            messages.error(request, 'Failed to update service. Please make sure all details are correct.')
     else:
         form = ServiceForm(instance=service)
         messages.info(request, f'You are editing {service.name}')
@@ -111,7 +111,7 @@ def edit_service(request, service_id):
 def delete_service(request, service_id):
     """ Delete a product from the store """
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only store owners can do that.')
+        messages.error(request, 'Sorry, this is for store owners only')
         return redirect(reverse('home'))
 
     service = get_object_or_404(Service, pk=service_id)

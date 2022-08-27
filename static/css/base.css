@@ -115,6 +115,11 @@ body {
     background-color: #D3D3D3;
 }
 
+.card-img-top {
+    min-height: 237.33px;
+    max-height: 237.33px;
+}
+
 /* ------------- Checkout Success Page ----------------  */
 
 .border-orange {
@@ -217,7 +222,7 @@ footer {
 
 .allauth-form-inner-content p {
     margin-top: 1.5rem; /* mt-4 */
-    color: #6c757d; /* text-secondary */
+    color: black; /* text-secondary */
 }
 
 .allauth-form-inner-content input {
@@ -238,19 +243,19 @@ footer {
 	/* btn */
 	display: inline-block;
     font-weight: 400;
-    color: #fff;
+    color: black;
     text-align: center;
     vertical-align: middle;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    background-color: #000;
+    background-color: orange;
     border: 1px solid #000;
     padding: .375rem .75rem;
     font-size: 1rem;
     line-height: 1.5;
-    border-radius: 0;
+    border-radius: 25px;
 
     /* standard bootstrap btn transitions */
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
@@ -264,7 +269,7 @@ footer {
 }
 
 .allauth-form-inner-content a {
-	color: #17a2b8;
+	color: #2ebbc5;
 }
 
 .form-control

@@ -24,10 +24,10 @@ def add_to_cart(request, item_id):
 
     if item_id in list(cart.keys()):
         cart[item_id] += quantity
-        messages.success(request, f'Added {service.name} to your cart')
+        messages.success(request, f'Great! Added {service.name} to your cart')
     else:
         cart[item_id] = quantity
-        messages.success(request, f'Added {service.name} to your Cart')
+        messages.success(request, f'Great! Added {service.name} to your Cart')
 
     request.session['cart'] = cart
     return redirect(redirect_url)
@@ -43,10 +43,10 @@ def adjust_cart(request, item_id):
     if quantity > 0:
         cart[item_id] = quantity
         messages.success(
-            request, f'Updated {service.name} quantity to {cart[item_id]}')
+            request, f'You Updated {service.name} quantity to {cart[item_id]}')
     else:
         cart.pop(item_id)
-        messages.success(request, f'Removed {service.name} from your cart')
+        messages.success(request, f'You Removed {service.name} from your cart')
 
     request.session['cart'] = cart
     return redirect(reverse('view_cart'))
@@ -60,9 +60,9 @@ def remove_from_cart(request, item_id):
         cart = request.session.get('cart', {})
         cart.pop(item_id)
         request.session['cart'] = cart
-        messages.success(request, f'Removed {service.name} from your cart')
+        messages.success(request, f'You Removed {service.name} from your cart')
         return HttpResponse(status=200)
 
     except Exception as e:
-        messages.error(request, f'Error removing item: {e}')
+        messages.error(request, f'Error removing service: {e}')
         return HttpResponse(status=500)
