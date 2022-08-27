@@ -1,6 +1,6 @@
 <h1>Friendly Fitness</h1>
 
-<img src="assets/readme_images/responsive.png">
+<img src="assets/readme_images/all-devices-black.png">
 
 ### **Live Site**
 [Frinedly Fitness Live Site](https://friendly-fitness.herokuapp.com/)
@@ -148,178 +148,56 @@ Users can currently subscribe to the Newsletter through the Mailchimp form in th
 
 ## Homepage
 
-### Logo / Shop Name
+ <details>
+  <summary>Screenshots Desktop</summary>
 
-<img src="assets/readme_images/logo.png" width="50%">
+  ![Header](assets/readme_images/header.PNG)
 
-### Search Bar 
+  - The header was kept as minimal as possible and I chose to keep the services section without any drop downs as the low amount of services currently being offered meant it was un necessary to do additional steps for navigation
 
-<img src="assets/readme_images/search.png" width="50%">
+  ![Desktop Footer](assets/readme_images/footer.PNG)
 
-### My Account 
+  - I chose to keep the footer only to the Home page as it felt intrusive on other pages and could potentially lead customers away from their main aim of the site which is to purchase personal training sessions. For that reason I kept navigation away for the site to a minimum.
 
-<img src="assets/readme_images/my-account.png" width="50%">
+  ![Desktop Main Home Image](assets/readme_images/main_image.PNG)
 
-### Shopping Bag 
+  - I wanted to main website image to be something both striking and also which easily gave the viewer a snapshot of the site aim. I chose the image I chose because it tailors to a wider audience as is in the Marketing startegy. 
 
-<img src="assets/readme_images/bag-icon.png" width="20%">
+  ![Desktop Pricing Section](assets/readme_images/pricing_section.PNG)
 
-### Bootstrap Toast
+  - The pricing section was added to give a bit of authenticity and personality to the site. Letting customers see a justification of the services pricing before purchasing for those who would not already be familiar to the trainer they are about to work with.
 
-<img src="assets/readme_images/success-toast.png" width="50%">
+  ![Desktop Services Page](assets/readme_images/services_view.PNG)
 
-<img src="assets/readme_images/alert-toast.png" width="50%">
+  - The services page was kept to the same level of mimimal design as the home. Providing only the necessary details of the service and choosing imagery which spoke to a wide audience. I choose to categorize and order the services and left room for additional services without the page being excessively long. Any more than 3 services and I would then choose to break down the service section and add the additonal required navigation through the site.
 
-### Product Navigation
+  ![Desktop Services Detail](assets/readme_images/service_detail.PNG)
 
-<img src="assets/readme_images/navigation.png" width="100%">
+  - For the service detail, I experimented with the footer also being present here but after user feedback, they felt there was very little to get confused about on this page and made for a more likely addition to the shopping cart. They felt the layout was clean and easy to read and felt the flow was laid out nicely.
 
-### Delivery Banner
+  ![Desktop Shopping Cart](assets/readme_images/shopping_cart.PNG)
 
-<img src="assets/readme_images/delivery-banner.png" width="100%">
+  - The shopping cartm while having the update and delete functionality, still does not feel over bearing to the user and I wanted to appearance to look and feel familiar to the previous pages bu while also being ditinct enough to know that you are nearing the final stage of completing your purchase.
 
-### Homepage Message
+  ![Desktop Checkout](assets/readme_images/checkout.PNG)
 
-<img src="assets/readme_images/homepage.png" width="750%">
+  - The checkout, while having a bit more information to it that the previous steps, feels like it has enough familiarity to other ecommerce stores that users will have enough intuition to navigate through it successfully and user feddback clarified that. While I think there are some changes that can be made, I would prefer to use a larger audience to dictate those changes.
 
-## My Account
+  ![Desktop Sign In](assets/readme_images/Sign_in.PNG)
 
-### Account Registration
+  - The sign in page, just needed enough changes to set the same feel, thrugh colours, fonts and layouts, that it did not feel like you were in any way using a third party or navigatin away from the site whilst you are about to provide personal information.
 
-<img src="assets/readme_images/registration.png" width="50%">
+  ![Desktop Sign Up](assets/readme_images/sign_up.PNG)
 
-### Login
+  - For the sign up, the main aim was that the fields be easy to read and easy to understand what was required. Of course having allauth provide the heavy lifting meant all that was required was colour coding and directing successfully to make it a pleasant esperience. 
 
-<img src="assets/readme_images/login.png" width="50%">
+  ![Desktop Confirmation Page](assets/readme_images/confirmation.PNG)
 
-### My Profile
+  - For the confirmation receipt, I just wanted to have all the information clearly displayed to the user and have a thankful message diplayed to them. Ensuring that mobile, tablet and desktop views all gave a similar experience was important and so I compared recipts of other sites to mobile versions too and found that they kept a similar style and made users scroll for info instead of minimizing it to have to zoom
 
-- Delivery Information
+  </details>
 
-<img src="assets/readme_images/default-delivery.png" width="50%">
-
-- Order History
-
-<img src="assets/readme_images/order-history.png" width="50%">
-
-- Order Confirmation
-
-<img src="assets/readme_images/checkout-success.png" width="50%">
-
-
-### Logout
-
-<img src="assets/readme_images/logout.png" width="50%">
-
-## Products Page 
-
-<img src="assets/readme_images/products.png" width="75%">
-
-## Product Details 
-
-<img src="assets/readme_images/add-favourites.png" width="75%">
-
-## Product Favourited 
-
-<img src="assets/readme_images/added-favourites.png" width="50%">
-
-## Product Review
-
-Visable on the bottom of the Product Details Page
-
-Logged in as Superuser and with reviews:
-
-<img src="assets/readme_images/review-section-1.png" width="75%">
-
-Not logged in and without reviews:
-
-<img src="assets/readme_images/review-section-2.png" width="75%">
-
-## Edit Review Form
-
-<img src="assets/readme_images/edit-review.png" width="75%">
-
-## Delete Review Confirmation
-
-<img src="assets/readme_images/delete-review.png" width="50%">
-
-## Favourited Products (Wishlist)
-
-<img src="assets/readme_images/my-favourites.png" width="75%">
-
-## Shopping Bag
-
-<img src="assets/readme_images/shopping-bag.png" width="50%">
-
-## Checkout
-
-<img src="assets/readme_images/checkout.png" width="50%">
-
-## Add Coupon Form
-
-<img src="assets/readme_images/add-coupon.png" width="50%">
-
-
-## Coupon Added / Remove Coupon
-
-<img src="assets/readme_images/added-coupon.png" width="50%">
-
-
-## Checkout Success
-
-<img src="assets/readme_images/checkout-success.png" width="50%">
-
-## Order Confirmation Email
-
-<img src="assets/readme_images/email-confirm.png" width="50%">
-
-## Footer
-
-<img src="assets/readme_images/footer.png" width="100%">
-
-## Help
-
-### FAQs
-
-<img src="assets/readme_images/faq.png" width="50%">
-
-
-### Shipping and Returns
-
-<img src="assets/readme_images/shipping.png" width="50%">
-
-## Company
-### About Us
-
-<img src="assets/readme_images/about.png" width="50%">
-
-### Privacy Policy
-
-<img src="assets/readme_images/privacy.png" width="50%">
-
-## Contact Form
-
-<img src="assets/readme_images/contact.png" width="50%">
-
-The following email is sent via the contact form:
-
-<img src="assets/readme_images/contact-form-email.png" width="50%">
-
-
-## 404 Error Page
-
-<img src="assets/readme_images/error.png" width="50%">
-
-## Admin Features
-
-### Product Management
-<img src="assets/readme_images/add.png" width="50%">
-
-### Edit Products
-<img src="assets/readme_images/edit.png" width="50%">
-
-### Delete Products
-<img src="assets/readme_images/delete.png" width="50%">
+Please use the Drop down above to expand out the Dekstop Images  
 
 ## Colour Scheme 
 
@@ -329,7 +207,13 @@ The colour scheme for the site was based off colours which evoke the emotions ty
 
 ## Font Choice
 
-I chose the roboto and Lato as they are two of the most popular fonts currently used and having familiarity in the site can help build a sense of trust in the user. 
+I chose the roboto and Lato as they are two of the most popular fonts currently used and having familiarity in the site can help build a sense of trust in the user. I had experimented with other fonts but found that the two complimented each other well and givent that there is not a great deal of text through the site, the fonts felt easy on the eye to avoid any strain for the user.
+
+- #5C0F3E
+- #FFA500
+- #D3D3D3
+- #000
+- #fff
 
 ## Favicon 
 -------------Create Favicon and Enter here ------------------- 
@@ -406,20 +290,23 @@ As a User I would like to be able to checkout securely and safely
 - The HTML templates were validated using [W3 Validator](https://validator.w3.org/nu/#textarea). No major errors were returned for the HTML segments.
 - The CSS style sheet was validated using [W3C Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) and no errors were returned.
 - The JavaScript files were run through [JSHint](https://jshint.com/) and no errors were found apart from a few missing semi-colons which were added. Also, the project was run through whilst checking for any issues in the console. No errors were found.
-- The code was validated using [PEP8](http://pep8online.com/). No errors were returned.
+- The code was validated using [PEP8](http://pep8online.com/). Some Line too long errors were returned but in the interest of time, I did not change all of these.
 - The finished project was also run through [Wave](https://wave.webaim.org/) to check for issues with contrast styling and HTML structure. 
 
 # Responsive Testing
 
 Responsive Testing dont mainly through Developer Tools for the following-
 
-- iPhone X
-- iPhone 8
-- Samsung S21 FE
-- Samsung S10+
-- Samsung Galaxy Z Flip3
-- iPad Pro 9.7"
-- MacBook Pro 13"
+- iPhone 12
+- iPhone 6/7/8
+- Samsung Galaxy S20 Ultra
+- Samsung Galaxy S8+
+- Pixel 5
+- iPad Air
+- IPad Mini
+- 4k 27" Screens
+- 1080p 24" Screens
+- 1080p 18" Screens
 
 
 # Bugs Found 
