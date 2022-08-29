@@ -9,13 +9,13 @@
 [Friendly Fitness Github Repository](https://github.com/StephenKennyGains/FriendlyFitness)
 
 # About
-An E-commerce site for selling Personal Training services for those working in the fitness indusrty selling One to One personal Training and Online Training Services.
+An E-commerce site for selling Personal Training services for those working in the fitness industry selling One to One personal Training and Online Coaching Services.
 
 # Table of Contents
 
 [User Experience](#user-experience)
 
-- [Marketing Audience](#marketing-plan)
+- [Marketing Audience](#marketing-audience)
 
 - [User Stories](#user-stories)
 
@@ -23,7 +23,7 @@ An E-commerce site for selling Personal Training services for those working in t
 
 - [Structure](#structure)
     - [Databases](#databases)
-    - [Design Plan](#design-plan)
+    - [Wireframes](#wireframes)
 
 
 [Marketing Strategy](#marketing-strategy)
@@ -38,7 +38,7 @@ An E-commerce site for selling Personal Training services for those working in t
 
 [Validator Testing](#validator-testing)
 
-[Design Testing](#design-testing)
+[Responsive Testing](#responsive-testing)
 
 [Known Bugs](#known-bugs)
 
@@ -50,7 +50,9 @@ An E-commerce site for selling Personal Training services for those working in t
 
 [Credits](#credits)
 
-[Acknowledgments](#Acknowledgments)
+[Project Requirements](#project-requirements)
+
+[Acknowledgements](#Acknowledgements)
 
 # User Experience
 
@@ -66,7 +68,7 @@ The general target of advertising personal training would be for 35-50 as the id
 
 # User Stories
 
-The User stories for the project can be found in the following link-[here](https://github.com/users/StephenKennyGains/projects/2).
+The User stories for the project can be found in the following link which leads to my gitHub Project associated to this app. -[here](https://github.com/users/StephenKennyGains/projects/2).
 
 
 
@@ -107,31 +109,45 @@ The website is made of the following apps:
 
 ## Databases
 
-For the live site, I connected Heroku's Postgres Database and for the local environment, it remains connected to Sqlite/
-Below is the entity rleationship diagram of the site:
+For the live site, I connected Heroku's Postgres Database and for the local environment, it remains connected to Sqlite.
+Below is the entity ralationship diagram of the site:
 
 <img src="assets/readme_images/FriendlyFitnessERD.png">
 
 ### Category
 
-The Category is the options for the User and Admin to select Services in a filtered way. Admins can add and update categories through the admin panel and Users will be filtered services based by category
+The Category is the options for the User and Admin to select Services in a filtered way. Admins can add and update categories through the admin panel and Users will be filtered services based by category. The category option does not require many fileds but is made useful for the display desired for the site. Without the category, the options for filtering services would require more lines of code and would need to be constanty updated when aspects such as a new naming convention are added and could lead to the services displaying in an incorrect order.
 
-### Products
-Products can be added by the admin from both the site and admin panel along with updating and deleting. Services can be selected by the user to add to their cart.
+### Services
+Services can be added by the admin from both the site and admin panel along with updating and deleting. Services can be selected by the user to add to their cart. The service model was kept to be only what was required whilst still allowing a little bit of scope for future development. Whilst aspects like SKU were not needed, other aspects which may not be exactly required, will be at a later point if the services and product categories are expanded at a later point. 
 
 ### Order & Order Line Items
-Order Line Items are created by the User by adding the service to their Cart. Their Order is based on the total services along with their User and purchase information.
+Order Line Items are created by the User by adding the service to their Cart. Their Order is based on the total services along with their User and purchase information. Order and Order Line Items follow a similar flow in the choices made and that is that whilst not all aspects are 100% crucial for the line item and order to be created and managed in the database, they offer no downside from being present and will make it easier to add additiona features at a later point.
 
 ### User
-User profiles are created by the user for speed in purchasing services. Users can save their details and Login to use those details in future purchases.
+User profiles are created by the user for speed in purchasing services. Users can save their details and Login to use those details in future purchases. Being based in Ireland, the County field offers a valid entry. Initially the plan was to limit the fields to only accept specific criteria for the country and county as this service would only be offered to customers in a local area to the site owner. with the addition of online training services, this would have been redundant and so were kept the same as they currently stand. 
  
 
 ## Wireframes
 
-Wireframes were created on Adobe XD and have been updated after initial views in a Live format. [Balsamiq](https://balsamiq.com/).
+Wireframes were created on Adobe XD and have been updated after initial views in the live environment. The dark grey background and yellow font colours didn't seem to contrast with one another as effectively as originally anitcipated and so were replaced by the colour palettes in the areas below. Use the drop down below to see the wireframes and orignal state.
 
+<details>
+  <summary>Screenshots Desktop</summary>
 
-# Marketing Strategies
+  ![IPhone View](assets/readme_images/FF-IPHONE.png)
+
+  ![Home Page](assets/readme_images/FF_HOME.png)
+
+  ![Service Page](assets/readme_images/FF_SERVICE.png)
+
+  ![Cart and Service Detail Layout](assets/readme_images/FF_DETAILS_CART.png)
+
+  ![Proposed Content Page](assets/readme_images/FF_CONTENT.png)
+
+ </details>
+
+# Marketing Strategy
 
 For the Marketing of the website I want to be able to reach both ends of the spectrum for the target audience and be able to cater towards all genders and the various personality types of potential clients. with the age gap between the newer demographic of younger people and the tragte demogrpahic of older people, Facebook and Intagram are the 2 platforms of choice to market through alongside email marketing. While Tiktok is the largest growing audience and highest growing spend rate amongst marketers, the saturation of low quality content may be conflicting for the type of training aimed at being provided. 
 
@@ -142,6 +158,12 @@ To combine the aim of Facebook, Instagram and Email Marketing, a platform like H
 ### MailChimp
 
 Users can currently subscribe to the Newsletter through the Mailchimp form in the footer of the site but this would also be able to managed through HubSpot if the Marketing and Social content was migrated there.
+
+### Facebook
+
+Whilst I do not currently have any social media apps to apply a Facebook or other Social Media Business page. Below you find a Facebook Mockup site for proposed advertising. The content strategy with Facebook advertsing would be to use a Free information model using imagery and text wich aligns with the site content to breed familiarity and trust between the User, the Content they are provided with and the Site Contents and Services.
+
+<img src="assets/readme_images/Facebook_mockup.png">
 
 
 # Features
@@ -201,13 +223,7 @@ Please use the Drop down above to expand out the Dekstop Images
 
 ## Colour Scheme 
 
-The colour scheme for the site was based off colours which evoke the emotions typically associated to health and wellnes and physical activity. Colours can be seen to similar to well know fitness brands like Anytime Fitness, Orange Theory, Fitness First and others.
-
-------------- Enter colour palette here -----------------------
-
-## Font Choice
-
-I chose the roboto and Lato as they are two of the most popular fonts currently used and having familiarity in the site can help build a sense of trust in the user. I had experimented with other fonts but found that the two complimented each other well and givent that there is not a great deal of text through the site, the fonts felt easy on the eye to avoid any strain for the user.
+The colour scheme for the site was based off colours which evoke the emotions typically associated to health and wellnes and physical activity. Colours can be seen to be similar to well know fitness brands like Anytime Fitness, Orange Theory, Fitness First and others. Whilst the colors below were not the original colours planned for the site, while keeping to the colour palettes I reviewed, I wanted to offer a higher contrast for the viewer for the text based sections of the site and so opted to change out the Dark tone grey colours for the background paired with the yellow tone font colour and lighten it to use a higher contrasting black or white font colour where the higher contrast would make sections both stand out and be easier on the eye for the user.
 
 - #5C0F3E
 - #FFA500
@@ -215,11 +231,17 @@ I chose the roboto and Lato as they are two of the most popular fonts currently 
 - #000
 - #fff
 
+## Font Choice
+
+I chose Roboto and Lato as they are two of the most popular fonts currently used and having familiarity in the site can help build a sense of trust in the user. I had experimented with other fonts but found that the two complimented each other well and given that there is not a great deal of text through the site, the fonts felt easy on the eye to avoid any strain for the user.
+While the fonts can be considered to be more generic than others and also do not fit the standard font used across other well know fitness sites, I do not have the design capabilities to develop custom imagery and logos that will help to match those used in other Fitness sites globally. Given a higher reach and potential increase in time and budget for design, I would look in to choosing a more dynamic font but without that, the two fonts chosen give the desired look and feel for the services provided. 
+
+
 ## Favicon 
--------------Create Favicon and Enter here ------------------- 
+The favicon was created on https://favicon.io/ and was used with Header and Footer colour with a contrasting white background. To upload this, it first needed to be added to the AWS S3 bucket under the media files and then linked in the Head element of the base.html file. 
 
 
-# Features to be Implemented
+# Additional Future Features
 The following features may prove useful to the site with a larger audience and further market research
 
 - A blog of content related to health and wellness so the newsletter can direct traffic back to the site
@@ -245,7 +267,7 @@ The following features may prove useful to the site with a larger audience and f
 - Lucid Chart
 - Google Fonts
 
-# Testing
+# User Testing
 ## **Manual Testing based on User Stories**
 ### Admin
 As an admin I would like to be able to review recent purchases
@@ -289,13 +311,12 @@ As a User I would like to be able to checkout securely and safely
 
 - The HTML templates were validated using [W3 Validator](https://validator.w3.org/nu/#textarea). No major errors were returned for the HTML segments.
 - The CSS style sheet was validated using [W3C Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) and no errors were returned.
-- The JavaScript files were run through [JSHint](https://jshint.com/) and no errors were found apart from a few missing semi-colons which were added. Also, the project was run through whilst checking for any issues in the console. No errors were found.
+- The JavaScript files were run through [JSHint](https://jshint.com/) and one error was returned for a mising semi-colon.
 - The code was validated using [PEP8](http://pep8online.com/). Some Line too long errors were returned but in the interest of time, I did not change all of these.
-- The finished project was also run through [Wave](https://wave.webaim.org/) to check for issues with contrast styling and HTML structure. 
 
 # Responsive Testing
 
-Responsive Testing dont mainly through Developer Tools for the following-
+Responsive Testing was done mainly through Developer Tools for the following as I could only test on Devices for Iphone 12, 8 and on Desktop Sizes.
 
 - iPhone 12
 - iPhone 6/7/8
@@ -309,18 +330,47 @@ Responsive Testing dont mainly through Developer Tools for the following-
 - 1080p 18" Screens
 
 
-# Bugs Found 
+# Known Bugs
 
+- There was an initial issue found where toasts would not display through the JS that was used and was cause by a version mismatch between the Jqeury version and the code written. This was fixed but also removed anyway in favour of messages for display reasons. The toasts felt like they took a lot of screen real estate on mobile devices and with the full view in adding a service, the cart changing colour along with a success message felt like a better UX.
+
+- Ordering of Services based on the category was not as desired so an update needed to be made to the dictionary run through in the services views.py file to have them ordered based on id. This can easily be updated as required with the introduction of new services or categories. 
+
+- During deployment, multiple json dumps needed to be made in order to have all data transferred from local to published site. Opted to keep the files in the file director based on Mentor Advice in case reuqired in the future.
+
+- Images of different sizes were diaplying differently on all screen sizes so css was added to limit the image size to a set height. 
 
 # User Feedback 
 
+- Buttons were taking up a high amount of space on smaller screens and so the buttons throughout the site were made smaller to align better with the rest of the content.
+
+- The toasts section displaying the cart felt redundant as users felt it was possible, but unlikely to add more than one Personal Training service at a time to the cart and so, made the decision to switch to messages to provide User Feedback. 
+
+- The footer was attracting as much attenton as the main content on more minimally styled pages so I opted to keep the footer localized to the Hme page.
+
+- The description of the servce being displayed on the checkout and service pages was taking up a high amount of space and was also congesting the page so was limited to just te service detail page. 
+
+- The size of the order confirmation was made quite large and users felt that it was actually making it harder to read through and align the context to the details and so was reduced back down along with adding some slight contrast changes between sections. 
+
  
-# Search Engine Optimisation (SEO)
-To find the relevant keywords for my project I made the following searches on [Google](www.google.co.uk) and [Word Tracker](www.wordtracker.com)  along with a few combinations:
+# Search Engine Optimisation
+To find the relevant keywords for my project I made the following searches on [Google](www.google.com) and [Word Tracker](www.wordtracker.com) and chose the following list of Key words;
 
+- Fitness
+- Training
+- Exercice
+- Health
+- Wellness
+- Routine
+- Personal
+- Nutrition
+- Coaching
+- Online Coaching
+- Personal Training
+- Advice
 
-
-Also, I included ‘Handmade Jewellery’ within the homepage message’ along with a subheading of ‘Find the perfect gift today!’ 
+I used these keywords where ever it was acceptable for use wihtout using them without context or relevance. Given the low amount of content currently on the site, I ensured that I used these same keywords in the images I chose for the site. 
+ 
 
 # Deployment 
 
@@ -391,12 +441,13 @@ Within this file add the following:
 - To deploy and host the images and static files through AWS, I followed the videos from the Boutique Ado walkthrough project, along with the updated PDF that was posted to Dev Tips in the slack channel for the 5th Project.
 
 
-# Credit
+# Credits
 ## Content 
 
 I used the Code Institutes Boutique Ado Follow Along project to help with building this project along with the following websites:
 
 - [Mini Web Tool](https://miniwebtool.com/django-secret-key-generator/) to generate a new Django Secret Key.
+- [Django Documentation](https://docs.djangoproject.com/en/4.1/) to generate a new Django Secret Key.
 
 
 ### Styling
@@ -410,4 +461,41 @@ All media files were used from Unsplash from a variety of artists, which all had
 - [Unsplash](https://unsplash.com/)
 
 
-# Acknowledgments
+# Project Requirements 
+
+- At least 3 original custom models with associated functionalities, markedly different from those present in the Boutique Ado walkthrough project if they have been used as a basis for your project.
+    - Models were made based on the requirments of the site and for the user.
+- At least one form on the front end, which provides either admin or regular users with CRUD functionality without having to access the admin panel.
+    - Front end form is present for the Update and Delete function for the admin or edit or remove products.
+- At least one UI element on the front end, which allows either admin or regular users to delete records in the database without having to access the admin panel.
+    - Available as above
+- Evidence of agile methodologies followed during the development of your project in the GitHub repository.
+    - Followed through the use of the projects tools in GitHub
+- A robots.txt file.
+    - Present
+- A sitemap.xml file.
+    - Present
+- Descriptive meta tags in the HTML.
+    - Present
+- At least one link to an external resource, which makes use of a rel attribute.
+    - Included in the Pricing section link to nutrition
+- A custom 404 error page.
+    - Present
+- Evidence of either a real Facebook business page, or mockup of one, for the purposes of digital marketing.
+    - a Mockup was created as I do not use an social media platforms.
+- Evidence of a newsletter signup form for the purposes of digital marketing.
+    - Present through Mailchimp
+- A description of the e-commerce business model including marketing strategies in the README file.
+    - Included above
+- DEBUG mode set to False.
+    - Present
+- Working functionality for users to register and log in and out of the application without issues.
+    - Works as designed
+- Working E-commerce functionality for users to make purchases within the application.
+    - Works as designed
+- Detailed testing write ups, beyond results of validation tools.
+    - Included in the user stories, testing, and noted bugs. 
+
+# Acknowledgements
+
+Thank you most particularly to the Code Institute Support Reps who work fantastically to help people like me who may struggle more than others. Very much appreciated. And for the instruction in the Boutique Ado walk through project for the way it was presented and tailored.
