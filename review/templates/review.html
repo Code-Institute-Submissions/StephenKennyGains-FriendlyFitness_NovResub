@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-12">
+        <div class="row d-flex align-items-center">
+            {% for review in review_list %}
+               <div class="col-12 col-md-4 my-3">
+                    <div class="card review-card text-center">
+                        <div>
+                            <div class="">
+                            Written by: {{ review.author }}
+                            </div>
+                        <div class="card-body">
+                            <h4 class="card-title">{{ review.title }}</h4>
+                            <h5 class="card-title">Location: {{ review.location }}</h5>
+                            <p class="card-text">{{ review.reviewbody }}</p>
+                            <h5 class="card-title">{{ review.rating }} <i class="fas fa-star"></i></h5>
+                        </div>
+                        <div class="text-muted">
+                        {{ review.created_on }}
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
