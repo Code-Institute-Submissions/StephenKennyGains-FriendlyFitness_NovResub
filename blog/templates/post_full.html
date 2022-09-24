@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+
+    <!---------------- Post Title, author and date created ---------------------->
+
+    <div class="post-view-title mt-4 mb-5">
+        <h1>
+            {{ post.title }}
+        </h1>
+        <h5>
+            {{ post.author }} | {{ post.created_on }}
+        </h5>
+    </div>
+
+    <!------------- The body of the post -------------------->
+
+    <div class="post-view-content">
+        <p>
+            {{ post.content | safe }}
+        </p>
+    </div>
+</div>
+
+
+{% endblock %}
