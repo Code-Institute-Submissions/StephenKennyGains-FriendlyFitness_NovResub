@@ -2,11 +2,11 @@
 an admin panel and enables approval of user commenting on posts"""
 
 from django.contrib import admin
-from .models import Post, Comment
+from .models import Post
 
 
 @admin.register(Post)
-class PostAdmin(SummernoteModelAdmin):
+class PostAdmin(admin.ModelAdmin):
     """ Sets the display and functionality for blog posting """
 
     prepopulated_fields = {'slug': ('title',)}
