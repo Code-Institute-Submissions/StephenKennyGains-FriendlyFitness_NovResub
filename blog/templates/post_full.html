@@ -8,10 +8,10 @@
     <!---------------- Post Title, author and date created ---------------------->
 
     <div class="post-view-title mt-4 mb-5">
-        <h1>
+        <h1 class="site-titles text-center mb-5">
             {{ post.title }}
         </h1>
-        <h5>
+        <h5 class="text-center">
             {{ post.author }} | {{ post.created_on }}
         </h5>
     </div>
@@ -19,11 +19,20 @@
     <!------------- The body of the post -------------------->
 
     <div class="post-view-content">
-        <p>
+        <p class="mb-5 blog-text-black site-font">
             {{ post.content | safe }}
         </p>
     </div>
 </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="text-center mb-5 mt-3">
+                <a class="btn btn-other rounded-4 mx-3" href="{% url 'blog' %}">Back to Blog Posts</a>
+                <a class="btn btn-shop rounded-4 mx-3" href="{% url 'services' %}">Review Our Services</a>
+            </div>
+        </div>
+    </div>
 
 
 {% endblock %}

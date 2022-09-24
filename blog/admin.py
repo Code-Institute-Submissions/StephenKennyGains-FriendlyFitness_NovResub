@@ -2,8 +2,8 @@
 an admin panel and enables approval of user commenting on posts"""
 
 from django.contrib import admin
-from .models import Post
 from django_summernote.admin import SummernoteModelAdmin
+from .models import Post
 
 
 @admin.register(Post)

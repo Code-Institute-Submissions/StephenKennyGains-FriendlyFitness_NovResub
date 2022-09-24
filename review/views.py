@@ -3,7 +3,7 @@ are displayed by referencing them through the templates.
 Below are the views to allow users to see all reviews
 made by users and admin along with CRUD functions"""
 
-from django.shortcuts import render, reverse, get_object_or_404
+from django.shortcuts import render, reverse
 from django.http import HttpResponseRedirect
 from django.views import generic, View
 from django.contrib import messages
@@ -61,32 +61,3 @@ class CreateReview(View):
                 messages.success(request,
                                  "You successfully posted a review")
             return HttpResponseRedirect(reverse("review"))
-
-
-class UpdateReview(View):
-
-    """ Allows users to update reviews they own """
-
-    def edit_review(request, id):
-
-        """ Re calls the create form but seperates the review
-        by ID so it is updating and not creating new reviews """
-
-        obj = get_object_or_404(Review, id=id)
-
-        form = ReviewForm(request.POST or None, instance=obj)
-        context = {'form': form}
-
-        if form.is_valid():
-                obj = form.save(commit=False)
-                obj.save()
-                messages.success(request,
-                                 "You successfully updated the review")
-                return HttpResponseRedirect(reverse("review"))
-
-        else:
-            context = {'form': form,
-                       'error': 'Oops something went wrong. Try again!'}
-            return render(request, 'edit_review.html', context)
-
-        return HttpResponseRedirect(reverse("review"))

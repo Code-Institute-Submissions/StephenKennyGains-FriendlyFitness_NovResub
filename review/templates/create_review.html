@@ -3,5 +3,65 @@
 
 {% block content %}
 
+<!------------ Create review header and info -------------->
+
+<div class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="site-titles text-center my-4">
+                    Create your own Review
+                </h1>
+                <p class="home-page-description text-center mb-5">
+                    Let people know what you thought of the Friendly Fitness Services with a bit of information about your experience. 
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+<!----------- To display review form  ----------------->
+
+<div class="container">
+    <div class="row">
+        <h3 class="form-headings-font">Leave a review:</h3>
+        <p class="form-headings-font">Reviewing as: {{ user.username }}</p>
+        <form method="POST">
+            <label for="title" class="form-headings-font">{{ review.title }}Service:</label><br>
+            <input placeholder="What service did you use? ex. 30 minute Online Coaching" class="form-boxes mb-2" type="text" id="title" name="title" required><br>
+            <label for="location" class="form-headings-font">{{ review.location }}Please write where you train from:</label><br>
+            <input placeholder="Dd you train from home or in person?" class="form-boxes mb-2" type="text" id="location" name="location" required><br>
+            <label for="review" class="form-headings-font">{{ review.reviewbody }}Your Review:</label><br>
+            <textarea placeholder="Let everyone know what you thought of our services" type="text" name="reviewbody" id="review" cols="80" rows="6" required></textarea> <br>
+            <p class="text-center my-3">Please rate your experience from 1-5 using the options below</p>
+            <div class="d-flex justify-content-evenly">
+            <div class="d-inline-block">
+            <input type="radio" class="radio-buttons" id="1" name="rating" value="1">
+            <label for="rating">{{ review.rating }}1</label><br>
+            </div>
+            <div class="d-inline-block">
+            <input type="radio" class="radio-buttons" id="2" name="rating" value="2">
+            <label for="rating">{{ review.rating }}2</label><br>
+            </div>
+            <div class="d-inline-block">
+            <input type="radio" class="radio-buttons" id="3" name="rating" value="3">
+            <label for="rating">{{ review.rating }}3</label><br>
+            </div>
+            <div class="d-inline-block">
+            <input type="radio" class="radio-buttons" id="4" name="rating" value="4">
+            <label for="rating">{{ review.rating }}4</label><br>
+            </div>
+            <div class="d-inline-block">
+            <input type="radio" class="radio-buttons" id="5" name="rating" value="5">
+            <label for="rating">{{ review.rating }}5</label><br>
+            </div>
+            </div>
+            {% csrf_token %}
+            <div class="text-center">
+            <button type="submit" class="btn btn-shop my-3 mb-5">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
 
 {% endblock %}

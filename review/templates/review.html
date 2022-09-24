@@ -3,29 +3,38 @@
 
 {% block content %}
 
-<div class="row">
-    <div class="col-12">
-        <div class="row d-flex align-items-center">
-            {% for review in review_list %}
-               <div class="col-12 col-md-4 my-3">
-                    <div class="card review-card text-center">
-                        <div>
-                            <div class="">
-                            Written by: {{ review.author }}
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col text-center mt-4 mb-4">
+            <a href="{% url 'create_review' %}" class="btn col-md-btn-lg btn-shop-home site-font rounded-3 text-uppercase py-3">Create a Review</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="row d-flex justify-content-between">
+                {% for review in review_list %}
+                <div class="col-12 col-md-3 my-3">
+                        <div class="card review-card text-center">
+                            <div>
+                                <div class="">
+                                {{ review.author }}
+                                </div>
+                            <div class="card-body site-font">
+                                <h4 class="card-title review-titles text-decoration-underline">{{ review.title }}</h4>
+                                <h5 class="card-title">At Home or in Person: {{ review.location }}</h5>
+                                <p class="card-text">{{ review.reviewbody }}</p>
+                                <h5 class="card-title">{{ review.rating }} <i class="fas fa-star"></i></h5>
                             </div>
-                        <div class="card-body">
-                            <h4 class="card-title">{{ review.title }}</h4>
-                            <h5 class="card-title">Location: {{ review.location }}</h5>
-                            <p class="card-text">{{ review.reviewbody }}</p>
-                            <h5 class="card-title">{{ review.rating }} <i class="fas fa-star"></i></h5>
-                        </div>
-                        <div class="text-muted">
-                        {{ review.created_on }}
-                        </div>
+                            <div class="text-muted">
+                            {{ review.created_on }}
+                            </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            {% endfor %}
+                {% endfor %}
+            </div>
         </div>
     </div>
 </div>
