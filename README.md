@@ -68,6 +68,8 @@ The general target of advertising personal training would be for 35-50 as the id
 
 # User Stories
 
+<img src="assets/readme_images/Friendly_fitness_flow_chart.png">
+
 The User stories for the project can be found in the following link which leads to my gitHub Project associated to this app. -[here](https://github.com/users/StephenKennyGains/projects/2).
 
 
