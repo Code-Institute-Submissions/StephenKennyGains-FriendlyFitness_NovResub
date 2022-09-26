@@ -312,16 +312,22 @@ As a User I would like to be able to checkout securely and safely
 # Validator Testing
 
 - The HTML templates were validated using [W3 Validator](https://validator.w3.org/nu/#textarea). No major errors were returned for the HTML segments.
-    Base.html was tested and found only errors for Links used Django templating language and one warning for commenting
-    Index.html was tested and found only errors for Links used Django templating language and a trailing Div which was removed. 
-    Service.html was missing some closing div tags and has warnings for Djamgo templating formats as expected. 
-    Sevice_detail.html only showed errors for django templating language
-    Edit_service.html showed no errors except the django templating language
-    add_service.html showed no errors except the django templating language
-    review.html showed no errors except the django templating language
-    create_review.html showed no errors except the django templating language
+    - Base.html was tested and found only errors for Links used Django templating language and one warning for commenting
+    - Index.html was tested and found only errors for Links used Django templating language and a trailing Div which was removed. 
+    - Service.html was missing some closing div tags and has warnings for Djamgo templating formats as expected. 
+    - Sevice_detail.html only showed errors for django templating language
+    - Edit_service.html showed no errors except the django templating language
+    - add_service.html showed no errors except the django templating language
+    - review.html showed no errors except the django templating language
+    - create_review.html showed no errors except the django templating language
+    - profile.html showed no errors except the django templating language and a couple of un closed divs which have been closed. 
+    - checkout.html showed no errors except the django templating language
+    - checkout_success.html only found django templating language errors. No others found. 
+    - cart.html has showed the most errors but again all erros showing were for django templating language
+    - post_full.html showed little to no erros but were only django templating language erros. 
+    - blog.html only showed one error and was for the django template link in the page. 
 - The CSS style sheet was validated using [W3C Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) and no errors were returned.
-- The JavaScript files were run through [JSHint](https://jshint.com/) and one error was returned for a mising semi-colon.
+- The JavaScript files were run through [JSHint](https://jshint.com/) and one error was returned for a mising semi-colon and has been rectified.
 - The code was validated using [PEP8](http://pep8online.com/). Some Line too long errors were returned but in the interest of time, I did not change all of these.
 
 # Responsive Testing
