@@ -55,7 +55,6 @@
                     {% endfor %}
 
             <div class="col-12">
-                <div class="row mt-1 mb-2"></div>
                 <div class="row">
                     {% for category, services in services_by_category.items %}
                         {% if category.name == 'online_training' %}
@@ -97,7 +96,13 @@
                             {% endfor %}
                         {% endif %}
                     {% endfor %}
+                </div>
+            </div>
+        </div>
     </div>
+    </div>
+
+</div>
 
 
 {% endblock %}

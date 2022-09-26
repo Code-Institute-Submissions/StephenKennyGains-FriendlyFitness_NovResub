@@ -312,6 +312,14 @@ As a User I would like to be able to checkout securely and safely
 # Validator Testing
 
 - The HTML templates were validated using [W3 Validator](https://validator.w3.org/nu/#textarea). No major errors were returned for the HTML segments.
+    Base.html was tested and found only errors for Links used Django templating language and one warning for commenting
+    Index.html was tested and found only errors for Links used Django templating language and a trailing Div which was removed. 
+    Service.html was missing some closing div tags and has warnings for Djamgo templating formats as expected. 
+    Sevice_detail.html only showed errors for django templating language
+    Edit_service.html showed no errors except the django templating language
+    add_service.html showed no errors except the django templating language
+    review.html showed no errors except the django templating language
+    create_review.html showed no errors except the django templating language
 - The CSS style sheet was validated using [W3C Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) and no errors were returned.
 - The JavaScript files were run through [JSHint](https://jshint.com/) and one error was returned for a mising semi-colon.
 - The code was validated using [PEP8](http://pep8online.com/). Some Line too long errors were returned but in the interest of time, I did not change all of these.
