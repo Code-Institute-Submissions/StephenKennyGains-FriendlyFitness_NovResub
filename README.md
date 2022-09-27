@@ -70,7 +70,31 @@ The general target of advertising personal training would be for 35-50 as the id
 
 <img src="assets/readme_images/Friendly_fitness_flow_chart.png">
 
-The User stories for the project can be found in the following link which leads to my gitHub Project associated to this app. -[here](https://github.com/users/StephenKennyGains/projects/2).
+## User Flow
+
+The above diagram lays out the users journey from each individual app in the project. Due to limitations with how many modules can be added with the free version of Lucidchart, not all links could be inlcuded as there are a set amount of connections and modules which can be added. 
+
+From the home, the user is presented with the navigation, a large banner image with a CTA to head straight to the services section of the site. Scrolling further, they are given information on pricing and justification for the services. Further down the page, they will see the site footer, available only through this page to avoid navigation away from potential purchases on other site pages
+
+Next is the Services section where users are presented with options to choose from based on category. After making a selction, they are given a more detailed page view for an overview of the product. They can select quantity and add to cart if desired, otherwise, they can navigate back the services page.
+
+If a service is selected, it will be added to the cart which is displayed in the main navigation for the user.
+
+When reviewing the cart, the user has the options to modify their, cart, navigate back to the services pages, or proceed to checkout.
+
+Once at the checkout section, a User can return to services or review their current services they are purchasing and proceed to payment. The form listed will populate logged in Users information and otherwise can be entered manually. The user can then enter card information to complete their purchase.
+
+Once a purchase is made the user is redirected to a new page, displaying their recipt and order information.
+
+Additionally, there is a review section and Blog section. The review section was kept seperate from the services as it seemed to make more sense that the overall services would be reviewed instead of one specific service given the nature of the site and that generally for fitness, users would be revieweing their experience with their trainer rather than an individual amount of time booked.
+
+Users who are registered can also leave their own reviews.
+
+The blog section ties in to the marketing model as the service is offering personal expertise and a blog of articles allows the user to see and feel more about the person they will be training with. The blog features a listing and then takes the user to a more detailed vew of each post with navigation promting them back to either look at further blog posts or to review the services on offer. 
+
+## User Stories Project on Github
+
+The User stories for the project can be found in the following link which leads to my gitHub Project associated to this app. -[here](https://github.com/users/StephenKennyGains/projects/2). This has now been changed from Public to Private due to my own mistake of making it private for first submission. 
 
 
 
@@ -108,6 +132,8 @@ The website is made of the following apps:
 3. Profile
 4. Cart
 5. Checkout
+6. Review
+7. Blog
 
 ## Databases
 
@@ -273,41 +299,52 @@ The following features may prove useful to the site with a larger audience and f
 ## **Manual Testing based on User Stories**
 ### Admin
 As an admin I would like to be able to review recent purchases
-(Recent purchases send through to the admin panel as expected with necessary details)
+ - (Recent purchases send through to the admin panel as expected with necessary details)
 As an admin I would like to be able to add to the list of services available
-(Services can easily and successfully be added to the site throuh the Services Management page)
+ - (Services can easily and successfully be added to the site throuh the Services Management page)
 As an admin I would like to be able to update and/or delete services as necessary
-(Services can easily and effectively be edited or deleted when viewing on the Services page)
+ - (Services can easily and effectively be edited or deleted when viewing on the Services page)
 As an admin I would like to be able to see new users that have been created for the store
-(New users are successfully added to the database and can be viewed in the admin panel for review)
+ - (New users are successfully added to the database and can be viewed in the admin panel for review)
+As an admin I would like to be able to remove Reviews if necessary from the site
+ - (Adding, editing and deleting functions work as expected from the admin panel for reviews)
+As an admin I would like to be able to publish new blog posts and edit them as necessary in the admin panel
+ - (Blog posts can be created updated and deleted from the site and admin panel as needed and edited easily using summernote)
 
 
 ### **Shopper**
 As a User I would like to be able to find services on the page easily and quickly
-(Tested and worked as designed and felt the process simple and easy and no errors on multiple test)
+ - (Tested and worked as designed and felt the process simple and easy and no errors on multiple test)
 As a User I would like to be able to find services on the page easily and quickly
-(Navigation bar worked as Designed and was easily accessbible on various devices. No failed attempts)
+ - (Navigation bar worked as Designed and was easily accessbible on various devices. No failed attempts)
 As a User I would like to be able to add services to my cart for review before purchasing
-(Cart was successfully updated with products and view was rendering as easily readabale and understandable)
+ - (Cart was successfully updated with products and view was rendering as easily readabale and understandable)
 As a User I would like to be able to clearly be able to see the services I am purchasing and price
-(List of services displayed as expected both in the cart and checkout pages of the app and were easily recognised)
+ - (List of services displayed as expected both in the cart and checkout pages of the app and were easily recognised)
 As a User I would like to be able to browse the site easily with no unnecessary clutter
-(Site was kepy minimal and from additional user testing, were able to navigate through the serives easily and understand site objective)
+ - (Site was kepy minimal and from additional user testing, were able to navigate through the serives easily and understand site objective)
 As a User I would like to be able to I would like to be able to store my information for the future
-(Information saved to user profiles when saving through the checkout page and by adding through the profile section)
+ - (Information saved to user profiles when saving through the checkout page and by adding through the profile section)
 As a User I would like to be able to review my details and payment before completing my purchase
-(Checkout page is easily read through form fields to be able to understand and read the details provided along with validating checks)
+ - (Checkout page is easily read through form fields to be able to understand and read the details provided along with validating checks)
 As a User I would like to be able to receive confirmation of my purchase
-(Confirmation email and receipts successfully sent with correct details after completing payment)
+ - (Confirmation email and receipts successfully sent with correct details after completing payment)
 As a User I would like to be able to Opt in for further information from the business
-(Mail chimp form is successfully adding users to the Mailchimp contacts for further updates)
+ - (Mail chimp form is successfully adding users to the Mailchimp contacts for further updates)
 As a User I would like to be able to review my previous purchases from the Store
-(Previous purchases are displaying in the profile section for the user and displaying correct values)
+ - (Previous purchases are displaying in the profile section for the user and displaying correct values)
 As a User I would like to be able to understand the services I am purchasing and their pricing
-(Pricing page and descriptions of services allow users information on the services they are purchasing and the reasons behind it)
+ - (Pricing page and descriptions of services allow users information on the services they are purchasing and the reasons behind it)
 As a User I would like to be able to checkout securely and safely
-(Stripe payment is successfully validating cards and asking for verification when required)
+ - (Stripe payment is successfully validating cards and asking for verification when required)
+As a User I would like to be able to able to view reviews left by other users
+ - (Reviews display after a user has submitted and display as expected on various screen sizes)
+As a User I would like to be able to able to review the services myself and have it displayed on the page
+ - (Create a review function works as designed and allows for only logged in users to access the form fiels to create a review.)
+As a User I would like to be able to red more about articles related to the services
+ - (Blog posts displayed as expected when given a published status of 1 and have navigation to return to services or blog listing)
 
+<img src="assets/readme_images/User_stories_for_friendly_fitness.PNG">
 
 # Validator Testing
 
@@ -329,6 +366,7 @@ As a User I would like to be able to checkout securely and safely
 - The CSS style sheet was validated using [W3C Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) and no errors were returned.
 - The JavaScript files were run through [JSHint](https://jshint.com/) and one error was returned for a mising semi-colon and has been rectified.
 - The code was validated using [PEP8](http://pep8online.com/). Some Line too long errors were returned but in the interest of time, I did not change all of these.
+    - At the time of reviewing this for re submission, the Pep8 Online Validator is down. It looks like their domain has not been purchased again and so is currently offline. The only python files that have not been confirmed to pass validation are those in the review and blog apps. 
 
 # Responsive Testing
 
@@ -344,6 +382,10 @@ Responsive Testing was done mainly through Developer Tools for the following as 
 - 4k 27" Screens
 - 1080p 24" Screens
 - 1080p 18" Screens
+
+Lighthouse Results
+
+<img src="assets/readme_images/lighthouse_results.PNG">
 
 
 # Known Bugs
@@ -480,13 +522,13 @@ All media files were used from Unsplash from a variety of artists, which all had
 # Project Requirements 
 
 - At least 3 original custom models with associated functionalities, markedly different from those present in the Boutique Ado walkthrough project if they have been used as a basis for your project.
-    - Models were made based on the requirments of the site and for the user.
+    - Models were made based on the requirments of the site and for the user. (Resubmission feedback was that the models criteria was not met and so 2 additional custom models were included. I have only included 2 as the feedback information said that other modifications had been made to that of the Boutique Ado project)
 - At least one form on the front end, which provides either admin or regular users with CRUD functionality without having to access the admin panel.
     - Front end form is present for the Update and Delete function for the admin or edit or remove products.
 - At least one UI element on the front end, which allows either admin or regular users to delete records in the database without having to access the admin panel.
     - Available as above
 - Evidence of agile methodologies followed during the development of your project in the GitHub repository.
-    - Followed through the use of the projects tools in GitHub
+    - Followed through the use of the projects tools in GitHub (Resubmission feedback was that no Kanban board was used and this was my mistake as I had set this to private. I have no included screenshots of the tool used and a link to the now ublic project made on Github)
 - A robots.txt file.
     - Present
 - A sitemap.xml file.
@@ -510,7 +552,7 @@ All media files were used from Unsplash from a variety of artists, which all had
 - Working E-commerce functionality for users to make purchases within the application.
     - Works as designed
 - Detailed testing write ups, beyond results of validation tools.
-    - Included in the user stories, testing, and noted bugs. 
+    - Included in the user stories, testing, and noted bugs. (Have now included my testing of each user story, have run through all HTML validator tools and listed any warning shown. Any errors shows were those from the Django Template format which was expected in the validation. I have removed any errors not relating to these issues. All other validator tools have been passed through and did not show any addiitonal errors.) 
 
 # Acknowledgements
 
