@@ -3,10 +3,8 @@
 <img src="assets/readme_images/all-devices-black.png">
 
 ### **Live Site**
-[Frinedly Fitness Live Site](https://friendly-fitness.herokuapp.com/)
+[Friendly Fitness Live Site](https://friendly-fitness.herokuapp.com/)
 
-### **Repository:**
-[Friendly Fitness Github Repository](https://github.com/StephenKennyGains/FriendlyFitness)
 
 # About
 An E-commerce site for selling Personal Training services for those working in the fitness industry selling One to One personal Training and Online Coaching Services.
@@ -368,13 +366,15 @@ As a User I would like to be able to red more about articles related to the serv
 
 - The JavaScript files were run through [JSHint](https://jshint.com/) and one error was returned for a mising semi-colon and has been rectified.
 
-- The code was validated using [PEP8](http://pep8online.com/). Some Line too long errors were returned but in the interest of time, I did not change all of these.
-    - At the time of reviewing this for re submission, the Pep8 Online Validator is down. It looks like their domain has not been purchased again and so is currently offline. The only python files that have not been confirmed to pass validation are those in the review and blog apps. 
-    - The new Validator I am using is now [Extends Class Python Checker](https://extendsclass.com/python-tester.html)
+- As Pep8 is down at the time of Validation, I have followed the instructions from our Slack channels and used the Linter pycodestyle to validate the python files.
+    - Press Ctrl+Shift+P
+    - Type the word linter into the search bar that appears, and click on Python: Select Linter from the filtered results
+    - Select pycodestyle from the list (image 2).
+    - PEP8 errors will now be underlined in red, as well as being listed in the PROBLEMS tab beside your terminal.
 
     - Top Level Files
-        - manage.py shows import error for import outside of Top Level
-        - custom_storages.py Passed
+        - manage.py shows -- Passed
+        - custom_storages.py -- Passed
 
     - Blog App
         - admin.py -- Passed
@@ -382,7 +382,7 @@ As a User I would like to be able to red more about articles related to the serv
         - models.py -- Passed
         - tests.py -- Passed
         - urls.py -- Passed
-        - views.py -- Passed (2 warnings for no object member and unused arguments but unchanged as they are required.)
+        - views.py -- Passed
 
     - Cart App
         - TemplateTags Folder
@@ -397,24 +397,24 @@ As a User I would like to be able to red more about articles related to the serv
         - views.py -- Passed
 
     - Checkout App
-        - __init__.py -- Passed (One warning for naming convention not conforming to Upper_case naming style) 
+        - __init__.py -- Passed
         - admin.py -- Passed
-        - apps.py -- Passed (1 Warning for import of checkout.signals import outside of top level and unused but unchanged as is required)
+        - apps.py -- Passed
         - forms.py -- Passed
-        - models.py -- Passed (Warnings for Line too long and no object member but required for code)
-        - signals.py -- Passed (Warning for Unused Arguements)
+        - models.py -- Passed
+        - signals.py -- Passed
         - tests.py -- Passed
         - urls.py -- Passed
-        - views.py -- Passed (Warnings for Object Members and e as too General Exception)
-        - webhook_handler.py -- Passed (Warnings for lines too long and Object Members)
-        - webhooks.py -- Passed (warnings for Line too long and too general excpetion)
+        - views.py -- Passed
+        - webhook_handler.py -- Passed
+        - webhooks.py -- Passed
 
     - Friendly Fitness
         - __init__.py -- Passed
         - asgi.py -- Passed
-        - settings.py -- Passed (4 Lines too Long)
-        - urls.py -- Passed (Handler404 unused but required)
-        - views.py -- Passed (One unused variable, excpetion)
+        - settings.py -- Passed
+        - urls.py -- Passed
+        - views.py -- Passed
         - wsgi.py -- Passed
 
     - Home App
@@ -430,32 +430,32 @@ As a User I would like to be able to red more about articles related to the serv
         - __init__.py -- Passed
         - admin.py -- Passed
         - apps.py -- Passed
-        - forms.py -- Passed (1 line too long )
-        - models.py -- Passed ( 2 instances of no object member and 2 unused arguments)
+        - forms.py -- Passed
+        - models.py -- Passed
         - tests.py -- Passed
         - urls.py -- Passed
-        - views.py -- Passed (1 Line too long and 1 redefinition of object)
+        - views.py -- Passed
 
     - Review App
         - __init__.py -- Passed
         - admin.py -- Passed
         - apps.py -- Passed
         - forms.py -- Passed
-        - models.py -- Passed (1 instance has no object member)
+        - models.py -- Passed
         - tests.py -- Passed
         - urls.py -- Passed
-        - views.py -- Passed (1 instance has no object member)
+        - views.py -- Passed
 
     - Services App
         - __init__.py -- Passed
         - admin.py -- Passed
         - apps.py -- Passed
-        - forms.py -- Passed ( 1 Unused variable and 1 no object members)
-        - models.py -- Passed ( 2 str not returning str )
+        - forms.py -- Passed
+        - models.py -- Passed
         - tests.py -- Passed
         - urls.py -- Passed
-        - views.py -- Passed ( 1 unused import, 1 no object members)
-        - widgets.py -- Passed (1 Line too long)
+        - views.py -- Passed
+        - widgets.py -- Passed
 
 # Responsive Testing
 
