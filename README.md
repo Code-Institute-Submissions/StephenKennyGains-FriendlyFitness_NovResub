@@ -346,23 +346,23 @@ As a User I would like to be able to red more about articles related to the serv
 
 # Validator Testing
 
-- The HTML templates were validated using [W3 Validator](https://validator.w3.org/nu/#textarea). No major errors were returned for the HTML segments.
-    - Base.html was tested and found only errors for Links used Django templating language and one warning for commenting
-    - Index.html was tested and found only errors for Links used Django templating language and a trailing Div which was removed. 
-    - Service.html was missing some closing div tags and has warnings for Djamgo templating formats as expected. 
-    - Sevice_detail.html only showed errors for django templating language
-    - Edit_service.html showed no errors except the django templating language
-    - add_service.html showed no errors except the django templating language
-    - review.html showed no errors except the django templating language
-    - create_review.html showed no errors except the django templating language
-    - profile.html showed no errors except the django templating language and a couple of un closed divs which have been closed. 
-    - checkout.html showed no errors except the django templating language
-    - checkout_success.html only found django templating language errors. No others found. 
-    - cart.html has showed the most errors but again all erros showing were for django templating language
-    - post_full.html showed little to no erros but were only django templating language erros. 
-    - blog.html only showed one error and was for the django template link in the page. 
+- The HTML templates were validated using [W3 Validator](https://validator.w3.org/nu/). No major errors were returned for the HTML segments.
+    - Base.html -- Passed
+    - Index.html -- Passed
+    - Service.html -- Passed
+    - Sevice_detail.html -- Passed
+    - Edit_service.html -- Passed
+    - add_service.html -- Passed
+    - review.html -- Passed
+    - create_review.html -- Passed
+    - profile.html  -- Passed
+    - checkout.html -- Passed
+    - checkout_success.html  -- Passed
+    - cart.html has -- Passed
+    - post_full.html -- Passed
+    - blog.html only -- Passed
 
-- The CSS style sheets were validated using [W3C Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) and no errors were returned.
+- The CSS style sheets were validated using [W3C Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) and no errors were returned barring Bootstrap errors which cannot be fixed or updated. 
 
 - The JavaScript files were run through [JSHint](https://jshint.com/) and one error was returned for a mising semi-colon and has been rectified.
 
