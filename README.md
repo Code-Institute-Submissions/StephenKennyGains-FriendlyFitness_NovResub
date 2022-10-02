@@ -363,10 +363,99 @@ As a User I would like to be able to red more about articles related to the serv
     - cart.html has showed the most errors but again all erros showing were for django templating language
     - post_full.html showed little to no erros but were only django templating language erros. 
     - blog.html only showed one error and was for the django template link in the page. 
-- The CSS style sheet was validated using [W3C Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) and no errors were returned.
+
+- The CSS style sheets were validated using [W3C Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) and no errors were returned.
+
 - The JavaScript files were run through [JSHint](https://jshint.com/) and one error was returned for a mising semi-colon and has been rectified.
+
 - The code was validated using [PEP8](http://pep8online.com/). Some Line too long errors were returned but in the interest of time, I did not change all of these.
     - At the time of reviewing this for re submission, the Pep8 Online Validator is down. It looks like their domain has not been purchased again and so is currently offline. The only python files that have not been confirmed to pass validation are those in the review and blog apps. 
+    - The new Validator I am using is now [Extends Class Python Checker](https://extendsclass.com/python-tester.html)
+
+    - Top Level Files
+        - manage.py shows import error for import outside of Top Level
+        - custom_storages.py Passed
+
+    - Blog App
+        - admin.py -- Passed
+        - apps.py -- Passed
+        - models.py -- Passed
+        - tests.py -- Passed
+        - urls.py -- Passed
+        - views.py -- Passed (2 warnings for no object member and unused arguments but unchanged as they are required.)
+
+    - Cart App
+        - TemplateTags Folder
+            - cart_tools.py -- Passed
+        - __init__.py -- Passed
+        - admin.py -- Passed
+        - apps.py -- Passed
+        - contexts.py -- Passed
+        - models.py -- Passed
+        - tests.py -- Passed
+        - urls.py -- Passed
+        - views.py -- Passed
+
+    - Checkout App
+        - __init__.py -- Passed (One warning for naming convention not conforming to Upper_case naming style) 
+        - admin.py -- Passed
+        - apps.py -- Passed (1 Warning for import of checkout.signals import outside of top level and unused but unchanged as is required)
+        - forms.py -- Passed
+        - models.py -- Passed (Warnings for Line too long and no object member but required for code)
+        - signals.py -- Passed (Warning for Unused Arguements)
+        - tests.py -- Passed
+        - urls.py -- Passed
+        - views.py -- Passed (Warnings for Object Members and e as too General Exception)
+        - webhook_handler.py -- Passed (Warnings for lines too long and Object Members)
+        - webhooks.py -- Passed (warnings for Line too long and too general excpetion)
+
+    - Friendly Fitness
+        - __init__.py -- Passed
+        - asgi.py -- Passed
+        - settings.py -- Passed (4 Lines too Long)
+        - urls.py -- Passed (Handler404 unused but required)
+        - views.py -- Passed (One unused variable, excpetion)
+        - wsgi.py -- Passed
+
+    - Home App
+        - __init__.py -- Passed
+        - admin.py -- Passed
+        - apps.py -- Passed
+        - models.py -- Passed
+        - tests.py -- Passed
+        - urls.py -- Passed
+        - views.py -- Passed
+
+    - Profiles App
+        - __init__.py -- Passed
+        - admin.py -- Passed
+        - apps.py -- Passed
+        - forms.py -- Passed (1 line too long )
+        - models.py -- Passed ( 2 instances of no object member and 2 unused arguments)
+        - tests.py -- Passed
+        - urls.py -- Passed
+        - views.py -- Passed (1 Line too long and 1 redefinition of object)
+
+    - Review App
+        - __init__.py -- Passed
+        - admin.py -- Passed
+        - apps.py -- Passed
+        - forms.py -- Passed
+        - models.py -- Passed (1 instance has no object member)
+        - tests.py -- Passed
+        - urls.py -- Passed
+        - views.py -- Passed (1 instance has no object member)
+
+    - Services App
+        - __init__.py -- Passed
+        - admin.py -- Passed
+        - apps.py -- Passed
+        - forms.py -- Passed ( 1 Unused variable and 1 no object members)
+        - models.py -- Passed ( 2 str not returning str )
+        - tests.py -- Passed
+        - urls.py -- Passed
+        - views.py -- Passed ( 1 unused import, 1 no object members)
+        - widgets.py -- Passed (1 Line too long)
 
 # Responsive Testing
 

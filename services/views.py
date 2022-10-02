@@ -66,7 +66,7 @@ def add_service(request):
             messages.success(request, 'Service Added Successfully')
             return redirect(reverse('service_detail', args=[service.id]))
         else:
-            messages.error(request, 'Failed to add service, please ensure all details are correct')
+            messages.error(request, 'Failed to add service, please try again')
     else:
         form = ServiceForm()
 
@@ -93,7 +93,7 @@ def edit_service(request, service_id):
             messages.success(request, 'Service Updated successfully')
             return redirect(reverse('service_detail', args=[service.id]))
         else:
-            messages.error(request, 'Failed to update service. Please make sure all details are correct.')
+            messages.error(request, 'Failed service update Please try again')
     else:
         form = ServiceForm(instance=service)
         messages.info(request, f'You are editing {service.name}')

@@ -1,4 +1,6 @@
 """ Views for Checkout App """
+import json
+
 from django.shortcuts import (render, redirect,
                               reverse, get_object_or_404, HttpResponse)
 from django.views.decorators.http import require_POST
@@ -13,8 +15,6 @@ from cart.contexts import cart_contents
 
 from .forms import OrderForm
 from .models import Order, OrderLineItem
-
-import json
 
 
 @require_POST
@@ -80,7 +80,8 @@ def checkout(request):
                     return redirect(reverse('view_cart'))
 
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+            return redirect(reverse('checkout_success',
+                            args=[order.order_number]))
         else:
             messages.error(request, 'There was an error with your request. \
                 Please confirm your information is correct.')
@@ -99,7 +100,7 @@ def checkout(request):
             currency=settings.STRIPE_CURRENCY,
         )
 
-        # Attempt to prefill the form with any info the user has in their profile
+        # Attempt to prefill the form with info from Profile
         if request.user.is_authenticated:
             try:
                 profile = UserProfile.objects.get(user=request.user)
